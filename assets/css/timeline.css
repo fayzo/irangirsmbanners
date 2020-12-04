@@ -1,0 +1,219 @@
+.timeline {
+    margin: 0 0 45px;
+    padding: 0;
+    position: relative;
+}
+
+.timeline::before {
+    border-radius: .25rem;
+    background-color: #dee2e6;
+    bottom: 0;
+    content: "";
+    left: 31px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 4px;
+}
+
+.timeline> .single-property-item {
+    margin-bottom: 15px;
+    /* margin-right: 10px; */
+    position: relative;
+}
+
+.timeline> .single-property-item::after{
+    content: "";
+    display: table;
+}
+.timeline> .single-property-item::before {
+    border-radius: .25rem;
+    background-color: #dee2e6;
+    bottom: 0;
+    content: "";
+    left: 31px;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    width: 4px;
+}
+
+.timeline> .single-property-item>.timeline-item {
+    box-shadow: 0 0 7px rgba(0,0,0,.125), 0 1px 6px rgba(0,0,0,.2);
+    border-radius: .25rem;
+    background-color: #fff;
+    color: #495057;
+    margin-left: 60px;
+    /* margin-right: 15px; */
+    margin-top: 0;
+    padding: 0;
+    position: relative;
+}
+
+.fa-user:before {
+    content: "\f007";
+}
+
+.timeline> .single-property-item>.fa, .timeline> .single-property-item>.fab, .timeline> .single-property-item>.fad, .timeline> .single-property-item>.fal,
+.timeline> .single-property-item>.far, .timeline> .single-property-item>.fas, .timeline> .single-property-item>.ion, .timeline> .single-property-item>.svg-inline--fa {
+    background-color: #3397fb;
+    color:white;
+    border-radius: 50%;
+    font-size: 14px;
+    height: 30px;
+    left: 18px;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 30px;
+    /* margin-top: 60px; */
+    /* margin-left: 4px; */
+}
+.timeline> .single-property-item> .percertage {
+
+    left: 18px;
+    position: absolute;
+    text-align: center;
+    padding: 2px;
+    top: 0;
+    margin-top: 60px;
+    border-radius: 4px;
+}
+.timeline> .single-property-item> .require{
+position: absolute;
+left:4px;
+font-size: 12px; 
+padding: 2px;
+font-weight: 400;
+border-radius: 4px;
+z-index: 2;
+margin-top: 27px;
+}
+
+.property-pic {
+    position: relative;
+}
+.property-pic> .discount{
+    z-index: 2;
+    position: absolute;
+    width: -moz-available;          /* WebKit-based browsers will ignore this. */
+    width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    width: fill-available;
+    width: 100px;
+    height: 100%;
+    height: -moz-available;          /* WebKit-based browsers will ignore this. */
+    height: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
+    height: auto;
+    top: 0px;
+
+}
+.photo_word{
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    padding-left: 10px;
+    color: #f7f0f0;
+    background: #0a0a0ab3;
+}
+.badge-primary {
+    background-color: #2b5c90 !important;
+}
+.chair {
+    background: url(http://localhost/twitter_ex/assets/image/background_image/chair.jpg) fixed center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+}
+.deleteButt {
+    padding: 0px;
+    width: 5px;
+}
+
+.deleteButt li {
+    padding: 0px;
+}
+
+.deleteButt li:hover ul {
+    display: block;
+}
+
+.deleteButt li ul {
+    position: absolute;
+    display: none;
+    padding: 0px;
+    z-index: 6;
+}
+
+.deleteButt li ul li {
+    background: white;
+    border-radius: 4px;
+    position: relative;
+    top: -55px;
+    left: -50px;
+}
+
+.deleteButt li ul li:hover {
+    background: #245f97;
+}
+
+.deleteButt li ul li label {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+}
+
+.deleteButt li ul li:hover>label {
+    color: white;
+}
+
+.showcartButt {
+    padding: 0px;
+    width: 5px;
+}
+
+.showcartButt li {
+    padding: 0px;
+}
+
+.showcartButt li:hover ul {
+    display: block;
+}
+
+.showcartButt li ul {
+    position: absolute;
+    display: none;
+    padding: 0px;
+    z-index: 6;
+    right: 10px;
+}
+
+.showcartButt li ul li {
+    /* background: white; */
+    color: white;
+    background: #717155;
+    border-radius: 4px;
+    position: relative;
+    top: -5px;
+    left: 8px;
+}
+
+.showcartButt li ul li:hover {
+    background: #245f97;
+}
+
+.showcartButt li ul li label {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    padding: 10px;
+    display: block;
+}
+
+.showcartButt li ul li:hover>label {
+    color: white;
+}
