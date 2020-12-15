@@ -13,7 +13,8 @@
                         <div class="footer-logo">
                             <div class="logo">
                                 <a href="<?php (isset($_SESSION['key'])? HOME:F_INDEX ); ?>"> 
-                                    <img src="<?php echo BASE_URL;?>assets/image/img/partner/irangiro_House.png" alt="">
+                                    <!-- <img src="< ?php echo BASE_URL;?>assets/image/img/partner/irangiro_House.png" alt=""> -->
+                                    <img width="118px" src="<?php echo BASE_URL;?>assets/image/logo/<?php echo $businessDetails['business_logo'] ;?>" alt="">
                                 </a>
                             </div>
                             <p>Subscribe our newsletter to get notification about new updates.</p>
@@ -26,18 +27,18 @@
                     </div>
                     <div class="col-lg-3 offset-lg-1">
                         <div class="footer-widget">
-                            <h4>Property City</h4>
+                            <h4>Vehicle</h4>
                             <ul>
-                                <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" >Kacyiru</a></li>
-                                <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" >Kimihurura</a></li>
-                                <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" >Kagugu</a></li>
-                                <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" >Kibagabaga</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" >Mercedes</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" >Toyota</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" >Volkswagen</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" >Audi</a></li>
                             </ul>
                             <ul>
-                                <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" >Gisozi</a></li>
-                                <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" >Nyarutarama</a></li>
-                                <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" >Kimironko</a></li>
-                                <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" >Kicukiro</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" >Jeep</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" >Rover</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" >Suzuki</a></li>
+                                <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" >Hyundai</a></li>
                             </ul>
                         </div>
                     </div>
@@ -80,7 +81,7 @@
             </div>
             <div class="copyright-text">
                 <p><p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="ti-heart" aria-hidden="true"></i> by <a href="<?php echo (isset($_SESSION['key']))? HOME:F_INDEX; ?>" >The Real estate Rwanda</a>
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | <i class="ti-heart" aria-hidden="true"></i> by <a href="<?php echo (isset($_SESSION['key']))? HOME:F_INDEX; ?>" >The Real Dealers in Rwanda</a>
   <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p></p>
             </div>
         </div>

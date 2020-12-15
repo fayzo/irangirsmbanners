@@ -20,35 +20,34 @@ if (isset($_REQUEST['sectorcode']) && !empty($_REQUEST['sectorcode'])) {
 
 }
 
-if (isset($_POST['sector']) && !empty($_POST['sector'])) {
+if (isset($_POST['car_marque']) && !empty($_POST['car_marque'])) {
 	$categories = $_POST['categories'];
-	$province= $_POST['province'];
-	$district = $_POST['district'];
-	$sector = $_POST['sector'];
+	$car_marque= $_POST['car_marque'];
 	$pages = $_POST['pages'];
 	$user_id = $_POST['user_id'];
 
 	$mysqli= $db;
-	$query= $mysqli->query("SELECT * FROM house H,provinces P,districts M ,sectors T 
-	WHERE  P. provincecode = '{$province}' and
-	M. districtcode= '{$district}'and T. sectorcode = '{$sector}' ");
+	$query= $mysqli->query("SELECT * FROM car 
+	WHERE categories_car = '{$categories}' and car_marque= '{$car_marque}'");
 	$houses = $query->fetch_array();
 	
-	echo $house->propertyView_SeachSectorNavbar($categories,$province,$district,$sector,$pages,$user_id);
-	echo "<div class='text-center h3 text-success'>$houses[provincename] / $houses[namedistrict] district / $houses[namesector] sector </div>";
-	echo $house->propertyView_SeachSectorList($categories,$province,$district,$sector,$pages,$user_id);
+	echo $house->propertyView_SeachSectorNavbar($categories,$car_marque,$pages,$user_id);
+	$subect = $houses['categories_car'];
+	$replace = " ";
+	$searching = "_";
+	$category= str_replace($searching,$replace, $subect);
+	echo "<div class='text-center h3 text-success'> $category / $houses[car_marque] </div>";
+	echo $house->propertyView_SeachSectorList($categories,$car_marque,$pages,$user_id);
 } 
 
-if (isset($_POST['sector_list']) && !empty($_POST['sector_list'])) {
+if (isset($_POST['car_marque_list']) && !empty($_POST['car_marque_list'])) {
 
 	$categories = $_POST['categories'];
-	$province= $_POST['province'];
-	$district = $_POST['district'];
-	$sector = $_POST['sector_list'];
+	$car_marque= $_POST['car_marque_list'];
 	$pages = $_POST['pages'];
 	$user_id = $_POST['user_id'];
 
-	echo $house->propertyView_SeachSectorList($categories,$province,$district,$sector,$pages,$user_id);
+	echo $house->propertyView_SeachSectorList($categories,$car_marque,$pages,$user_id);
 } 
 // echo var_dump($_POST);
 ?>

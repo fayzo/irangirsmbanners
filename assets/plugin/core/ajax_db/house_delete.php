@@ -4,52 +4,53 @@ $users->preventUsersAccess($_SERVER['REQUEST_METHOD'],realpath(__FILE__),realpat
 
 if (isset($_POST['available']) && !empty($_POST['available'])) {
     $user_ids= $_SESSION['key'];
-	$house_id= $_POST['house_id'];
+	$car_id= $_POST['car_id'];
 	$user_id= $_POST['user_id'];
     $available= $_POST['available'];
     $discount_change= $_POST['discount_change'];
 	$discount_price= $_POST['discount_price'];
 	$price= $_POST['price'];
 	$banner= $_POST['banner'];
-    $house->update_house($banner,$available,$discount_change,$discount_price,$price,$house_id);
+    $house->update_house($banner,$available,$discount_change,$discount_price,$price,$car_id);
 }
 
 if (isset($_POST['deleteTweetHome']) && !empty($_POST['deleteTweetHome'])) {
-	$house_id= $_POST['deleteTweetHome'];
-    $house->deleteHouse($house_id);
+	$car_id= $_POST['deleteTweetHome'];
+    $house->deleteHouse($car_id);
 }
 
 if (isset($_POST['property_type']) && !empty($_POST['property_type'])) {
-	$house_id= $_POST['house_id'];
+	$car_id= $_POST['car_id'];
 	$user_id= $_POST['user_id'];
     $available= $_POST['available_'];
 	$discount_price= $_POST['discount_price'];
 	$price= $_POST['price'];
-	$equipment= $_POST['equipment'];
+	$car_marque= $_POST['car_marque'];
 	$text= $_POST['text'];
     $property_type= $_POST['property_type'];
     
-    $house->update('house',array(
+    $house->update('car',array(
         'buy' => $available,
         'price_discount' => $discount_price,
         'price' => $price,
-        'equipment' => $equipment,
+        'car_marque' => $car_marque,
         'text' => $text,
-        'categories_house' => $property_type,
+        'categories_car' => $property_type,
     ),array(
-        'house_id' => $house_id,
+        'car_id' => $car_id,
     ));
 }
 
 if (isset($_POST['EditHouseAdmin']) && !empty($_POST['EditHouseAdmin'])) {
-    // $house->deleteHouse($house_id); 
-    $house_id= $_POST['rowID'];
+    // $house->deleteHouse($car_id); 
+    $car_id= $_POST['rowID'];
     $mysqli= $db;
-    $query= $mysqli->query("SELECT * FROM house WHERE house_id = $house_id ");
-    $houses = $query->fetch_array();
+    $query= $mysqli->query("SELECT * FROM car WHERE car_id = $car_id ");
+    $car = $query->fetch_array();
     ?>
 
 <div class="house-popup">
+  <script src="<?php echo BASE_URL_LINK ;?>car_type/car_type.js"></script>
         
         <div class="wrap6" id="disabler">
             <div class="wrap6Pophide" onclick="togglePopup ( )" ></div>
@@ -68,28 +69,26 @@ if (isset($_POST['EditHouseAdmin']) && !empty($_POST['EditHouseAdmin'])) {
                         <span id="responseSubmithouse"></span>
                         <div class="form-row">
                             <div class="col-12 mb-2">
-                                <label for="authors">Property</label>
+                                <label for="authors">Category</label>
                                 <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon2"><i class="fa fa-home mr-1" aria-hidden="true"></i></span>
                                 </div>
-                                    <select class="form-control" name="property_type_" id="property_type_<?php echo $houses["house_id"];?>" onchange="getPropertyTypeHide(this)">
-                                    <option  value=""><?php echo $houses["categories_house"];?></option>
-                                    <option value="House_For_sale">House For sale</option>
-                                    <option value="House_For_rent">House For rent</option>
-                                    <option value="Land_For_sale">Land & Plot</option>
-                                    <option value="Apartment_For_sale">Apartment For sale</option>
-                                    <option value="Apartment_For_rent">Apartment For rent</option>
-                                    <option value="room_For_rent">room</option>
-                                    <option value="commerce_For_rent">commerce</option>
-                                    <option value="Offices_For_rent">Offices</option>
+                                    <select class="form-control" name="property_type_" id="property_type_<?php echo $car["car_id"];?>" onchange="getPropertyTypeHide(this)">
+                                    <option  value=""><?php echo $car["categories_car"];?></option>
+                                    <option value="Car_For_sale">Car For sale</option>
+                                    <option value="Car_For_rent">Car For rent</option>
+                                    <option value="Truck_For_sale">Truck For sale</option>
+                                    <option value="Buses_For_sale">Buses For sale</option>
+                                    <option value="Motorcycle_For_sale">Motorcycle For sale</option>
+                                    <option value="Bicycle_For_sale">Bicycle For sale</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="col-12 mb-2">
-                                    Property Tpye
+                            <div class="col-6 mb-2">
+                                    Tpye
                                     <div class="input-group">
-                                            <select class="form-control" name="available" id="available_<?php echo $houses["house_id"];?>">
+                                            <select class="form-control" name="available" id="available_<?php echo $car["car_id"];?>">
                                             <?php if ($houses['buy'] == 'sold') { ?>
                                             <option value="sold" selected>sold</option>
                                             <option value="rent">rent</option>
@@ -105,17 +104,13 @@ if (isset($_POST['EditHouseAdmin']) && !empty($_POST['EditHouseAdmin'])) {
                                     </div> <!-- input-group -->
                                 </label>
                             </div>
-                            <div class="col-12 mb-2" id="EquipmentHide">
-                                <label for="authors">Equipment</label>
+                            <div class="col-6 mb-2" id="car_marqueHide">
+                                car_marque
                                 <div class="input-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon2"><i class="fas fa-chair mr-1" aria-hidden="true"></i></span>
                                 </div>
-                                <select class="form-control" name="equipment_" id="equipment_<?php echo $houses["house_id"];?>"">
-                                    <option value=""><?php echo $houses["equipment"];?></option>
-                                    <option value="FURNISHED">Full furnished</option>
-                                    <option value="UNFURNISHED">Unfurnished</option>
-                                </select>
+                                    <div id="myCar_type"></div>
                                 </div>
                             </div>
                         </div>
@@ -123,7 +118,7 @@ if (isset($_POST['EditHouseAdmin']) && !empty($_POST['EditHouseAdmin'])) {
                             <div class="col-12 mb-2">
                                 discount price
                                 <div class="input-group">
-                                    <input  type="number" class="form-control form-control-sm" name="discount_price" id="discount_price_<?php echo $houses["house_id"];?>" value="<?php echo $houses["price_discount"];?>">
+                                    <input  type="number" class="form-control form-control-sm" name="discount_price" id="discount_price_<?php echo $car["car_id"];?>" value="<?php echo $car["price_discount"];?>">
                                     <div class="input-group-append">
                                         <span class="input-group-text" style="padding: 0px 10px;" aria-label="Username" aria-describedby="basic-addon1">Frw</span>
                                     </div>
@@ -132,7 +127,7 @@ if (isset($_POST['EditHouseAdmin']) && !empty($_POST['EditHouseAdmin'])) {
                             <div class="col-12 mb-2">
                                     Price
                                 <div class="input-group">
-                                    <input  type="number" class="form-control form-control-sm" name="price" id="price_<?php echo $houses["house_id"];?>" value="<?php echo $houses["price"];?>">
+                                    <input  type="number" class="form-control form-control-sm" name="price" id="price_<?php echo $car["car_id"];?>" value="<?php echo $car["price"];?>">
                                     <div class="input-group-append">
                                         <span class="input-group-text" style="padding: 0px 10px;"
                                             aria-label="Username" aria-describedby="basic-addon1" >Frw</span>
@@ -141,12 +136,12 @@ if (isset($_POST['EditHouseAdmin']) && !empty($_POST['EditHouseAdmin'])) {
                             </div>
                         </div>
                         <div class="form-group mt-2">
-                            <textarea class="form-control" name="additioninformation" id="text_<?php echo $houses["house_id"];?>" value="<?php echo $houses["price"];?>" placeholder="tell us your property" rows="3"><?php echo $houses["text"];?></textarea>
+                            <textarea class="form-control" name="additioninformation" id="text_<?php echo $car["car_id"];?>" value="<?php echo $car["price"];?>" placeholder="tell us your property" rows="3"><?php echo $car["text"];?></textarea>
                         </div>
                     </div><!-- card-body -->
                     <div class="card-footer text-center">
                         <div id="responseSubmithouse"></div>
-                        <button type="button" class="btn btn-primary update-houseAdmin-btn btn-lg btn-block" data-house="<?php echo $houses["house_id"];?>" data-user="<?php echo $houses["user_id3"];?>"> Submit</button>
+                        <button type="button" class="btn btn-primary update-houseAdmin-btn btn-lg btn-block" data-house="<?php echo $car["car_id"];?>" data-user="<?php echo $car["user_id3"];?>"> Submit</button>
                     </div><!-- card-footer -->
 
                 </div><!-- card -->
@@ -159,9 +154,9 @@ if (isset($_POST['EditHouseAdmin']) && !empty($_POST['EditHouseAdmin'])) {
 
 if (isset($_POST['showpopupdelete']) && !empty($_POST['showpopupdelete'])) {
     $user_id= $_SESSION['key'];
-	$house_id= $_POST['showpopupdelete'];
+	$car_id= $_POST['showpopupdelete'];
 	$house_user_id= $_POST['deleteEvents'];
-    $houses= $house->house_getPopupTweet($user_id,$house_id,$house_user_id);
+    $houses= $house->house_getPopupTweet($user_id,$car_id,$house_user_id);
     ?>
      <div class="house-popup">
         
@@ -174,7 +169,7 @@ if (isset($_POST['showpopupdelete']) && !empty($_POST['showpopupdelete'])) {
             <div class="img-popup-body">
 
             <div class="card">
-            <span id='responseDeletePost<?php echo $houses['house_id']; ?>'></span>
+            <span id='responseDeletePost<?php echo $houses['car_id']; ?>'></span>
                 <div class="card-header">
                     <h5 class="text-center text-muted">Are you sure you want to delete This Posts?</h5>
                 <div class="user-block">
@@ -219,7 +214,7 @@ if (isset($_POST['showpopupdelete']) && !empty($_POST['showpopupdelete'])) {
                                 // echo $house->banner($houses['banner']) ;
                                         $file = $houses['photo']."=".$houses['other_photo'];
                                         $expode = explode("=",$file);  ?>
-                                <img class="propertyPicture" src="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>" >
+                                <img class="propertyPicture" src="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>" >
                             </div>
                         </div>
                         <div class="col-md-8">
@@ -238,17 +233,17 @@ if (isset($_POST['showpopupdelete']) && !empty($_POST['showpopupdelete'])) {
                                 <h5 class="r-title" style="display: inline-block;">
                                 <i class="fa fa-home" aria-hidden="true"></i>
                                     <?php 
-                                    $subect = $houses['categories_house'];
+                                    $subect = $houses['categories_car'];
                                     $replace = " ";
                                     $searching = "_";
                                     echo str_replace($searching,$replace, $subect);
                                     ?>
                                 </h5> |
                                 
-                                <span class="h6 text-success text-uppercase ml-2"><?php echo $houses['equipment']; ?></span>
+                                <span class="h6 text-success text-uppercase ml-2"><?php echo $houses['car_marque']; ?></span>
                                 
                                 <div> From:<span class="room-price price-change"> <?php echo $house->nice_number(number_format($houses['price'])); ?> Frw
-                                    <?php  echo (substr($houses['categories_house'],-4) == 'sale')? '':'/month';?>
+                                    <?php  echo (substr($houses['categories_car'],-4) == 'sale')? '':$houses['price_per_day'];?>
                                     </span>
                                     <?php if($houses['price_discount'] != 0){ ?>
                                         
@@ -256,8 +251,8 @@ if (isset($_POST['showpopupdelete']) && !empty($_POST['showpopupdelete'])) {
                                     <?php echo number_format($houses['price_discount']); ?> Frw </span> <?php } ?>
                                 </div>
                                 
-                                <h5 class="r-title pt-3"><a href="javascript:void(0)" id="house-readmore" data-house="<?php echo $houses['house_id']; ?>" >
-                                    <?php $titlex= $houses['name_of_house'];
+                                <h5 class="r-title pt-3"><a href="javascript:void(0)" id="car-readmore" data-car="<?php echo $houses['car_id']; ?>" >
+                                    <?php $titlex= $houses['name_of_car'];
                                     if (strlen($titlex) > 25) {
                                     echo $titlex = substr($titlex,0,25).'..';
                                     }else{ 
@@ -266,7 +261,7 @@ if (isset($_POST['showpopupdelete']) && !empty($_POST['showpopupdelete'])) {
                                 </a>
                                 </h5>
 
-                                <a class="properties-location"  href="javascript:void(0)" id="house-readmore" data-house="<?php echo $houses['house_id']; ?>" ><i class="icon_pin"></i>
+                                <a class="properties-location"  href="javascript:void(0)" id="car-readmore" data-car="<?php echo $houses['car_id']; ?>" ><i class="icon_pin"></i>
                                 <!-- < ?php echo $houses['provincename']; ?> /  -->
                                 <?php echo $houses['namedistrict']; ?> District/ 
                                 <?php echo $houses['namesector']; ?> Sector
@@ -282,7 +277,7 @@ if (isset($_POST['showpopupdelete']) && !empty($_POST['showpopupdelete'])) {
                                     $titlex= $houses['text'];
                                     if (strlen($titlex) > 20) {
                                     echo $titlex = substr($titlex,0,87).'..
-                                    <a class="properties-location"  href="javascript:void(0)" id="house-readmore" data-house="'.$houses['house_id'].'" >Read more</a>
+                                    <a class="properties-location"  href="javascript:void(0)" id="house-readmore" data-house="'.$houses['car_id'].'" >Read more</a>
                                     ';
                                     }else{ 
                                     echo $titlex;
@@ -290,17 +285,17 @@ if (isset($_POST['showpopupdelete']) && !empty($_POST['showpopupdelete'])) {
 
                                     </p> -->
                                 <ul class="room-features">
-                                    <li>
+                                    <!-- <li>
                                         <i class="fa fa-bed"></i>
-                                        <p><?php echo $houses['bedroom']; ?>  Bed Room</p>
+                                        <p>< ?php echo $houses['bedroom']; ?>  Bed Room</p>
                                     </li>
                                     <li>
                                         <i class="fa fa-bath"></i>
-                                        <p><?php echo $houses['bathroom']; ?> Baths Room</p>
-                                    </li>
+                                        <p>< ?php echo $houses['bathroom']; ?> Baths Room</p>
+                                    </li> -->
                                     <li>
                                         <i class="fa fa-car"></i>
-                                        <p><?php echo $houses['car_in_garage']; ?> Garage</p>
+                                        <p> Garage</p>
                                     </li>
                                 </ul>
                             </div><!-- col -->

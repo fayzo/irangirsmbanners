@@ -21,10 +21,6 @@ $(document).ready(function () {
 
     $(document).on('click', '#add_house', function (e) {
         // home page hide
-        $('#provincecode').attr('id', 'province');
-        $('#districtcode').attr('id', 'district');
-        $('#sectorcode').attr('id', 'sector');
-        $('#codecell').attr('id', 'cell');
 
         e.stopPropagation();
         var house_view = $(this).data('house');
@@ -40,10 +36,6 @@ $(document).ready(function () {
                 $(".close-imagePopup").click(function () {
                 $(".house-popup").hide();
                 
-                $('#province').attr('id', 'provincecode');
-                $('#district').attr('id', 'districtcode');
-                $('#sector').attr('id', 'sectorcode');
-                $('#cell').attr('id', 'codecell');
                 });
                 console.log(response);
             }
@@ -119,16 +111,16 @@ $(document).ready(function () {
     });
     
 
-    $(document).on('click', '#house-readmore', function (e) {
+    $(document).on('click', '#car-readmore', function (e) {
         e.stopPropagation();
-        var house_id = $(this).data('house');
+        var car_id = $(this).data('car');
 
         $.ajax({
             url: 'core/ajax_db/property-readmore.php',
             method: 'POST',
             dataType: 'text',
             data: {
-                house_id: house_id,
+                car_id: car_id,
             }, success: function (response) {
                 $(".popupTweet").html(response);
                 $(".close-imagePopup").click(function () {
@@ -174,33 +166,25 @@ $(document).ready(function () {
         var other_photo = $('#other-photo');
         // var video = $('#video');
         // var youtube = $('#youtube');
-        var categories_house = $('#categories_house_');
-        var name_of_house = $('#name_of_house');
-        var equipment = $('#equipment_');
-        var Minimum_bedrooms = $('#Minimum_bedrooms');
-        var Minimum_bathrooms = $('#Minimum_bathrooms');
-        var car_in_garage = $('#car_in_garage');
+        var categories_car = $('#categories_car');
+        var name_of_car = $('#name_of_car');
         var price = $('#price');
+        // var price_per_day = $('#price_per_day');
         var phone = $('#phone');
-        var country = $('#country');
+        // var year_made = $('#year_made');
+        // var car_marque = $('#car_marque');
         var province = $('.provincecode');
         var districts = $('.districtcode');
         var sector = $('.sectorcode');
-        var cell = $('.codecell');
-        var village = $('.CodeVillage');
-        var photo_Title1 = $('#photo-Title1');
         
-        if (isEmpty(country) && isEmpty(province) && isEmpty(districts) &&
-            isEmpty(sector) && isEmpty(cell) && isEmpty(village) && isEmpty(name_of_house) && isEmpty(authors) && isEmpty(phone) &&
-            isEmpty(categories_house) && isEmpty(equipment) && isEmpty(price)  && isEmpty(Minimum_bedrooms) && 
-            isEmpty(Minimum_bathrooms) && isEmpty(car_in_garage) &&
-            isEmpty(additioninformation) && isEmpty(photo_Title1) && isEmpty(photo) &&
-            isEmpty(other_photo)
+        if (isEmpty(province) && isEmpty(districts) &&
+            isEmpty(sector) && isEmpty(name_of_car) && isEmpty(authors) && isEmpty(phone) &&
+            isEmpty(categories_car) && isEmpty(price) && isEmpty(additioninformation ) 
             
             ) {
             
-            var extensions3 = $('#photo').val().split('.').pop().toLowerCase();
-            var extensions4 = $('#other-photo').val().split('.').pop().toLowerCase();
+            var extensions3 = photo.val().split('.').pop().toLowerCase();
+            var extensions4 = other_photo.val().split('.').pop().toLowerCase();
 
             if (jQuery.inArray(extensions3, ['gif', 'png', 'jpg', 'mp4', 'mp3', 'jpeg', 'bmp', 'pdf', 'doc', 'ppt', 'docx', 'xlsx', 'xls', 'zip']) == -1) {
                 $("#responseSubmithouse").html('Invalid Image File').fadeIn();
@@ -509,13 +493,12 @@ function client_business(key) {
     var email_client_ = $("#email_client_");
     var Request_Type_client_ = $("#Request_Type_client_");
     var property_type_client_ = $("#property_type_client_");
-    var equipment_client_ = $("#equipment_client_");
-    var Minimum_bedrooms_client_ = $("#Minimum_bedrooms_client_");
-    var Minimum_bathrooms_client_ = $("#Minimum_bathrooms_client_");
+    var car_marque = $("#car_marque");
     var location = $("#location_client");
     var phone_client_ = $("#phone_client_");
     var currency = $("#currency");
     var price = $("#price");
+    var price_per_day = $("#price_per_day");
     var messages_client_ = $("#messages_client_");
     //   use 1 or second method to validaton
     if (isEmpty(name_client_) && isEmpty(email_client_) && isEmpty(Request_Type_client_) && isEmpty(property_type_client_) &&
@@ -532,13 +515,12 @@ function client_business(key) {
                 email_client_: email_client_.val(),
                 Request_Type_client_: Request_Type_client_.val(),
                 property_type_client_: property_type_client_.val(),
-                equipment_client_: equipment_client_.val(),
-                Minimum_bedrooms_client_: Minimum_bedrooms_client_.val(),
-                Minimum_bathrooms_client_: Minimum_bathrooms_client_.val(),
+                car_marque: car_marque.val(),
                 location: location.val(),
                 phone_client_: phone_client_.val(),
                 currency: currency.val(),
                 price: price.val(),
+                price_per_day: price_per_day.val(),
                 messages_client_: messages_client_.val(),
             },
             success: function(response) {

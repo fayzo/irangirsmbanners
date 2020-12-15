@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     $(document).on('click', '.deleteHouse', function (e) {
         e.preventDefault();
-        var house_id = $(this).data('house');
+        var house_id = $(this).data('car');
         var user_id = $(this).data('user');
 
         $.ajax({
@@ -30,7 +30,7 @@ $(document).ready(function () {
                                 $("#responseDeletePost").fadeOut();
                             }, 1000);
                             setInterval(function () {
-                                location.reload();
+                                // location.reload();
                             }, 1100);
                             console.log(response);
                         }
@@ -45,7 +45,7 @@ $(document).ready(function () {
 
     $(document).on('click', '.update-house-btn', function (e) {
         e.preventDefault();
-        var house_id = $(this).data('house');
+        var house_id = $(this).data('car');
         var user_id = $(this).data('user');
         var available = $('#available' + house_id).val();
         var discount_change = $('#discount_change' + house_id).val();
@@ -58,7 +58,7 @@ $(document).ready(function () {
                 method: 'POST',
                 dataType: 'text',
                 data: {
-                    house_id: house_id,
+                    car_id: house_id,
                     user_id: user_id,
                     available: available,
                     discount_change: discount_change,
@@ -71,7 +71,7 @@ $(document).ready(function () {
                         $("#response"+ house_id).fadeOut();
                     }, 1000);
                     setInterval(function () {
-                        location.reload();
+                        // location.reload();
                     }, 1100);
                     console.log(response);
                 }

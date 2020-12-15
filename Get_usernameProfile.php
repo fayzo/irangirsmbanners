@@ -67,5 +67,5 @@ if (isset($_GET['username']) == true && empty($_GET['username']) == false) {
 
 }
 
-echo $house->housecart_item(); 
+echo $house->car_cart_item(); 
 ?>

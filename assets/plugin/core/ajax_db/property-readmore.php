@@ -3,7 +3,7 @@ include('../init.php');
 $users->preventUsersAccess($_SERVER['REQUEST_METHOD'],realpath(__FILE__),realpath($_SERVER['SCRIPT_FILENAME']));
 
 
-if (isset($_POST['house_id']) && !empty($_POST['house_id'])) {
+if (isset($_POST['car_id']) && !empty($_POST['car_id'])) {
     if (isset($_SESSION['key'])) {
         # code...
         $user_id= $_SESSION['key'];
@@ -19,17 +19,15 @@ if (isset($_POST['house_id']) && !empty($_POST['house_id'])) {
 
     }
     
-    $house_id = $_POST['house_id'];
-    // $user= $house->houseReadmore($house_id);
+    $car_id = $_POST['car_id'];
+    // $user= $house->houseReadmore($car_id);
     $mysqli= $db;
-    $query= $mysqli->query("SELECT * FROM house H
+    $query= $mysqli->query("SELECT * FROM car H
         Left JOIN provinces P ON H. province = P. provincecode
         Left JOIN districts M ON H. districts = M. districtcode
         Left JOIN sectors T ON H. sector = T. sectorcode
-        Left JOIN cells C ON H. cell = C. codecell
-        Left JOIN vilages V ON H. village = V. CodeVillage 
         Left JOIN users U ON H. user_id3 = U. user_id 
-    WHERE H. house_id = $house_id ");
+    WHERE H. car_id = $car_id ");
     $row = $query->fetch_array();
     ?>
 
@@ -85,10 +83,10 @@ if (isset($_POST['house_id']) && !empty($_POST['house_id'])) {
                 <div class="col-lg-8">
                 <h5 class="text-center black-bg h4 mb-2">
                 <?php 
-                    $subect = $row['categories_house'];
+                    $subect = $row['categories_car'];
                     $replace = " ";
                     $searching = "_";
-                    echo str_replace($searching,$replace, $subect)." | <span class='text-success'>".$row['equipment']."</span> <div>".$row['namedistrict']."/".$row['namesector']." at ".number_format($row['price'])." Frw"; ?></div></h5>
+                    echo str_replace($searching,$replace, $subect)." | <span class='text-success'>".$row['car_marque']."</span> <div>".$row['namedistrict']."/".$row['namesector']." at ".number_format($row['price'])." Frw"; ?></div></h5>
 
                     <div class="pd-details-text">
                         <div class="property-more-pic">
@@ -98,19 +96,19 @@ if (isset($_POST['house_id']) && !empty($_POST['house_id'])) {
                                         $expode = explode("=",$file);
                                         // $splice = array_expode ($expode,0,10); ?>
 
-                                <img class="product-big-img" src="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>" alt="">
+                                <img class="product-big-img" src="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>" alt="">
                             </div>
                             <div class="product-thumbs">
                                 <div class="product-thumbs-track ps-slider owl-carousel">
 
-                                        <div class="pt active" data-imgbigurl="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>" >
-                                            <img src="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>"  alt="">
+                                        <div class="pt active" data-imgbigurl="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>" >
+                                            <img src="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>"  alt="">
                                         </div>
 
                                         <?php  for ($i=1; $i < count($expode); ++$i) { 
                                                 ?>
-                                                <div class="pt" data-imgbigurl="<?php echo BASE_URL.'uploads/house/'.$expode[$i]; ?>">
-                                                    <img src="<?php echo BASE_URL.'uploads/house/'.$expode[$i]; ?>" alt="">
+                                                <div class="pt" data-imgbigurl="<?php echo BASE_URL.'uploads/car/'.$expode[$i]; ?>">
+                                                    <img src="<?php echo BASE_URL.'uploads/car/'.$expode[$i]; ?>" alt="">
                                                 </div>
                                         <?php } ?>
                                 </div>
@@ -134,25 +132,26 @@ if (isset($_POST['house_id']) && !empty($_POST['house_id'])) {
                                             <table class="left-table">
                                                 <tbody>
                                                     <tr>
+                                                        <td class="pt-name">name</td>
+                                                        <td class="p-value"><?php echo $row['name_of_car']; ?></td>
+                                                    </tr>
+                                                    <tr>
                                                         <td class="pt-name">Price</td>
                                                         <td class="p-value"><?php echo number_format($row['price']); ?> Frw</td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="pt-name">Equipment</td>
-                                                        <td class="p-value"><?php echo $row['equipment']; ?></td>
+                                                        <td class="pt-name">Marque</td>
+                                                        <td class="p-value"><?php echo $row['car_marque']; ?></td>
                                                     </tr>
+                                                   
                                                     <tr>
-                                                        <td class="pt-name">Bathrooms</td>
-                                                        <td class="p-value"><?php echo $row['bathroom']; ?></td>
+                                                        <td class="pt-name">Year</td>
+                                                        <td class="p-value"><?php echo $row['year_made']; ?></td>
                                                     </tr>
-                                                    <tr>
-                                                        <td class="pt-name">Bedrooms</td>
-                                                        <td class="p-value"><?php echo $row['bedroom']; ?></td>
-                                                    </tr>
-                                                    <tr>
+                                                    <!-- <tr>
                                                         <td class="pt-name">Garages</td>
-                                                        <td class="p-value"><?php echo $row['car_in_garage']; ?></td>
-                                                    </tr>
+                                                        <td class="p-value">< ?php echo $row['car_in_garage']; ?></td>
+                                                    </tr> -->
                                                 </tbody>
                                             </table>
                                             <table class="right-table">
@@ -166,9 +165,9 @@ if (isset($_POST['house_id']) && !empty($_POST['house_id'])) {
                                                         <td class="p-value"> (+250) <?php echo substr($row['phone'],1); ?></td>
                                                     </tr>
                                                     <tr>
-                                                        <td class="pt-name">Property type</td>
+                                                        <td class="pt-name">Type</td>
                                                         <td class="p-value"><?php 
-                                                                $subect = $row['categories_house'];
+                                                                $subect = $row['categories_car'];
                                                                 $replace = " ";
                                                                 $searching = "_";
                                                                 echo str_replace($searching,$replace, $subect) ?>
@@ -251,7 +250,7 @@ if (isset($_POST['house_id']) && !empty($_POST['house_id'])) {
                             </div>
                             <form action="#" method="post" id="form_agentMessage" class="agent-contact-form">
                                 <input type="hidden" name="user_id" value="<?php echo $row['user_id3']; ?>">
-                                <input type="hidden" name="house_id" value="<?php echo $row['house_id']; ?>">
+                                <input type="hidden" name="car_id" value="<?php echo $row['car_id']; ?>">
                                 <input type="text" name="name_clientToAgent" id="name_clientToAgent" placeholder="Name*">
                                 <input type="text" name="email_clientToAgent" id="email_clientToAgent" placeholder="Email">
                                 <input type="text" name="phone_clientToAgent" id="phone_clientToAgent" placeholder="Phone">
@@ -415,7 +414,7 @@ if(isset($_POST['contacts_agent'])){
                 <div class="card-body">
                     <div id="responses"></div> 
                     <input type="hidden" name="user_id" value="<?php echo $row['user_id']; ?>">
-                    <input type="hidden" name="house_id" value="0">
+                    <input type="hidden" name="car_id" value="0">
                             <div class="form-row">
                                 <div class="col-12">
                                 <label for="lastname">Name :</label>
@@ -475,7 +474,7 @@ if(isset($_POST['contacts_agent'])){
 
 if (isset($_POST['name_clientToAgent']) && !empty($_POST['name_clientToAgent'])) {
     $user_id= $_POST['user_id'];
-    $house_id= $_POST['house_id'];
+    $car_id= $_POST['car_id'];
     $datetime= date('Y-m-d H-i-s');
 
     $name = $users->test_input($_POST['name_clientToAgent']);
@@ -490,7 +489,7 @@ if (isset($_POST['name_clientToAgent']) && !empty($_POST['name_clientToAgent']))
 	'phone_client'=> $phone, 
 	'message_client'=> $message, 
     'user_id3'=> $user_id,
-    'house_id_msg'=> $house_id,
+    'car_id_msg'=> $car_id,
     'datetime'=> $datetime 
         ));
 } 
