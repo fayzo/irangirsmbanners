@@ -18,7 +18,7 @@ class Db
         $dbHost = "localhost";
         $dbUsername = "root";
         $dbPassword = "";
-        $dbName = "car";
+        $dbName = "irangiro_house";
         $dbport = "3306";
         // $conn = new mysqli( 'localhost','fayzo','fayzo123','retrieve_data','3306');
         $this->connection = new Mysqli($dbHost, $dbUsername, $dbPassword, $dbName,$dbport);
