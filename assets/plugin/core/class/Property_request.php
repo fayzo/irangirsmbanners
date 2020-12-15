@@ -15,14 +15,13 @@ class Property_request extends House {
                     <div class="col-lg-12">
                         <nav class="main-menus">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#House_For_sale" onclick="property_requestCategories('House_For_sale',1);">House For sale<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('House_For_sale');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#House_For_rent" onclick="property_requestCategories('House_For_rent',1);">House For rent<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('House_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Land_For_sale" onclick="property_requestCategories('Land_For_sale',1);">Land & Plots<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('Land_For_sale');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Apartment_For_sale" onclick="property_requestCategories('Apartment_For_sale',1);">Apartment For sale<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('Apartment_For_sale');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Apartment_For_rent" onclick="property_requestCategories('Apartment_For_rent',1);">Apartment For rent<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('Apartment_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#room_For_rent" onclick="property_requestCategories('room_For_rent',1);">Room<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('room_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Commerce_For_rent" onclick="property_requestCategories('commerce_For_rent',1);">Commerce<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('Commerce_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Offices_For_rent" onclick="property_requestCategories('Offices_For_rent',1);">Offices<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('Offices_For_rent');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Car_For_sale" onclick="property_requestCategories('Car_For_sale',1);">Car For sale<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('Car_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Car_For_rent" onclick="property_requestCategories('Car_For_rent',1);">Car For rent<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('Car_For_rent');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Truck_For_sale" onclick="property_requestCategories('Truck_For_sale',1);">Truck For sale<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('Truck_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Buses_For_sale" onclick="property_requestCategories('Buses_For_sale',1);">Buses For sale<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('Buses_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Motorcycle_For_sale" onclick="property_requestCategories('Motorcycle_For_sale',1);">Motorcycle For sale<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('Motorcycle_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Bicycle_For_sale" onclick="property_requestCategories('Bicycle_For_sale',1);">Bicycle For sale<span class="badge badge-primary"><?php echo $this->property_requestcountPOSTS('Bicycle_For_sale');?></span></a></li>
+
                             </ul>
                         </nav>
                     </div>
@@ -41,7 +40,7 @@ class Property_request extends House {
 
         <div class="card card-primary mb-3 ">
                 <div class="card-header">
-                PROPERTY REQUEST
+                VEHICLES REQUEST
                 </div> <!-- /.card-header -->
                 <div class="card-body message-color" style="padding-top: 2px;padding-bottom: 2px;">
                 
@@ -57,13 +56,13 @@ class Property_request extends House {
         }
         
         $mysqli= $this->database;
-        $result =$mysqli->query("SELECT * FROM business_request_home WHERE property_type ='$categories' ORDER BY datetime Desc ,rand()  Limit $showpages,10");
+        $result =$mysqli->query("SELECT * FROM business_request_car WHERE category_type ='$categories' ORDER BY datetime Desc ,rand()  Limit $showpages,10");
         
         if ($result->num_rows > 0) {
                     while ($user= $result->fetch_array()) { ?>
                         
                                 <div class="col-12 px-0 border-bottom">
-                                <div class="user-block mb-2 jobHover more"  href="javascript:void()" onclick="business_msg(<?php echo $user['business_request_id'];?>, 'business_request_home')" >
+                                <div class="user-block mb-2 jobHover more"  href="javascript:void()" onclick="business_msg(<?php echo $user['business_request_id'];?>, 'business_request_car')" >
                                     <div class="user-jobImgBorder">
                                             <div class="user-jobImg">
                                                 <img src="<?php echo BASE_URL;?>assets/image/users_profile_cover/empty-profile.png" id="house-readmore" data-house="<?php echo $user['house_id']; ?>">
@@ -73,12 +72,12 @@ class Property_request extends House {
                                     <!-- Job Title:  -->
                                         <a style="padding-right:3px;" href="#"><?php echo $user['name_client'];?></a> 
                                     </span>
-                                    <div class="description"><span class="btn-sm btn-success"><?php echo $user['request_type'];?></span> <span class="btn-sm btn-primary"> <?php echo $user['equipment'];?></span></div>
+                                    <div class="description"><span class="btn-sm btn-success">
+                                    <?php echo $user['request_type'];?></span> <span class="btn-sm btn-primary"> 
+                                    <?php echo $user['car_marque'];?></span></div>
                                     <div class="description"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $user['location'];?></div>
-                                    <div class="description"><?php echo $user['bedroom']." ";?><i class="fa fa-bed" aria-hidden="true"></i>  <?php echo $user['bathroom']." ";?><i class="fa fa-bath" aria-hidden="true"></i>
-                                        | <?php echo number_format($user['price']);?> <?php echo $user['currency'];?>
-                                    </div>
-                                    <div class="description">Publish <?php echo $this->timeAgo($user['datetime']);?></div>
+                                    <div class="description"><?php echo number_format($user['price']);?> <?php echo $user['currency'];?>
+                                    Publish <?php echo $this->timeAgo($user['datetime']);?></div>
                                 </div>
                                 </div>
                                 <hr>
@@ -97,7 +96,7 @@ class Property_request extends House {
 
     <?php
 
-            $query1= $mysqli->query("SELECT COUNT(*) FROM business_request_home WHERE property_type ='$categories' ");
+            $query1= $mysqli->query("SELECT COUNT(*) FROM business_request_car WHERE category_type ='$categories' ");
             $row_Paginaion = $query1->fetch_array();
             $total_Paginaion = array_shift($row_Paginaion);
             $post_Perpages = $total_Paginaion/10;
@@ -132,7 +131,7 @@ class Property_request extends House {
      public function property_requestcountPOSTS($categories){
 
         $db =$this->database;
-        $sql= $db->query("SELECT COUNT(*) FROM business_request_home WHERE property_type ='$categories' ");
+        $sql= $db->query("SELECT COUNT(*) FROM business_request_car WHERE category_type ='$categories' ");
         $row_post = $sql->fetch_array();
         $total_post= array_shift($row_post);
         $array= array(0,$total_post);

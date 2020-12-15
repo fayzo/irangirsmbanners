@@ -61,7 +61,7 @@ $users->preventUsersAccess($_SERVER['REQUEST_METHOD'],realpath(__FILE__),realpat
 		if ($_POST['key'] == 'approvalHouse') {
 			$conn =$db;
 			$rowID = $db->real_escape_string($_POST['rowID']);
-	 		$conn->query("UPDATE house SET approval= '{$_POST["approval"]}' WHERE house_id='$rowID'");
+	 		$conn->query("UPDATE car SET approval= '{$_POST["approval"]}' WHERE car_id='$rowID'");
 			exit('success');
 		}
 
@@ -157,12 +157,12 @@ $users->preventUsersAccess($_SERVER['REQUEST_METHOD'],realpath(__FILE__),realpat
 
 		//  ADMIN HOUSE FOR EDIT, VIEW AND DELETE 
 
-		if ($_POST['key'] == 'business_request_home') {
+		if ($_POST['key'] == 'business_request_car') {
 			$conn =$db;
 			$rowID = $conn->real_escape_string($_POST['rowID']);
-			$sql = $conn->query("SELECT name_client,email_client,phone,request_type,property_type,equipment,
-			bedroom,bathroom,location,price,currency,datetime,message_request
-			FROM business_request_home WHERE business_request_id='$rowID'");
+			$sql = $conn->query("SELECT name_client,email_client,phone,request_type,category_type,car_marque,
+			location,price,currency,price_per_day,datetime,message_request
+			FROM business_request_car WHERE business_request_id='$rowID'");
 
 			$data = $sql->fetch_array();
 			$jsonArrays = array(
@@ -170,12 +170,11 @@ $users->preventUsersAccess($_SERVER['REQUEST_METHOD'],realpath(__FILE__),realpat
 				'email'=> $data['email_client'], 
 				'phone'=> $data['phone'], 
 				'request_type'=> $data['request_type'],
-				'property_type'=> $data['property_type'],
-				'equipment'=> $data['equipment'],
-				'bedroom'=> $data['bedroom'],
-				'bathroom'=> $data['bathroom'],
+				'category_type'=> $data['category_type'],
+				'car_marque'=> $data['car_marque'],
 				'location'=> $data['location'],
 				'price'=> $data['price'],
+				'price_per_day'=> $data['price_per_day'],
 				'currency'=> $data['currency'],
 				'datetime'=> $data['datetime'],
 				'message_request'=> $data['message_request'],
@@ -193,7 +192,7 @@ $users->preventUsersAccess($_SERVER['REQUEST_METHOD'],realpath(__FILE__),realpat
 		 if ($_POST['key'] == 'business_request_delete') {
 			$conn =$db;
 			$rowID = $db->real_escape_string($_POST['rowID']);
-			$conn->query("DELETE FROM business_request_home WHERE business_request_id='$rowID'");
+			$conn->query("DELETE FROM business_request_car WHERE business_request_id='$rowID'");
 			exit('The Row Has Been Deleted!');
 		}
 

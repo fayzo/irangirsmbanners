@@ -7,6 +7,7 @@ if (isset($_POST['house_view']) && !empty($_POST['house_view'])) {
     $get_province = mysqli_query($db,"SELECT * FROM provinces");   
      ?>
   <!-- <script src="< ?php echo BASE_URL_LINK ;?>dist/js/country_login_ajax-db.js"></script> -->
+  <script src="<?php echo BASE_URL_LINK ;?>car_type/car_type.js"></script>
 
 <div class="house-popup">
     
@@ -22,7 +23,7 @@ if (isset($_POST['house_view']) && !empty($_POST['house_view'])) {
                 <span id="responseSubmithouse"></span>
                 <div class="card-header">
                     <button class="btn btn-success btn-sm  float-right d-md-block d-lg-none"  onclick="togglePopup ( )">close</button>
-                    <h5>Add house </h5>
+                    <h5>Add car </h5>
                     <p class="card-text">Fill details below ?</p>
                 </div>
                 <form method="post" id="form-house"  enctype="multipart/form-data" >
@@ -64,50 +65,24 @@ if (isset($_POST['house_view']) && !empty($_POST['house_view'])) {
                                     <div class="input-group-prepend">
                                         <span class="input-group-text" id="basic-addon2"><i class="fa fa-map-marker mr-1" aria-hidden="true"></i></span>
                                     </div>
-                                    <select class="form-control sectorcode" name="sectorcode" id="sectorcode"  onchange="showResult3();">
+                                    <select class="form-control sectorcode" name="sectorcode" id="sectorcode" >
                                         <option></option>
                                     </select>
                                 </div>
                             </div>
                       
-                            <div class="col-sm-12 col-md-3">
-                                <label for="Cell" class="text-dark">Cell</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text" id="basic-addon2"><i class="fa fa-map-marker mr-1" aria-hidden="true"></i></span>
-                                    </div>
-                                    <select name="codecell" id="codecell" class="form-control codecell" onchange="showResult4();">
-                                        <option></option>
-                                    </select>
-                                </div>
-                            </div>
-
-                        </div>
-
-                         <div class="form-row mt-2">
-
-                          <div class="col-sm-12 col-md-3">
-                            <label for="Village">Village</label>
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon2"><i class="fa fa-map-marker mr-1" aria-hidden="true"></i></span>
-                                </div>
-                                  <select name="CodeVillage" id="CodeVillage" class="form-control CodeVillage">
-                                      <option> </option>
-                                  </select>
-                            </div>
-                        </div>
-
                         <div class="col-sm-12 col-md-3">
-                            <label for="authors">Street number of house</label>
+                            <label for="authors">Titre of car</label>
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon2"><i class="fa fa-map-marker mr-1" aria-hidden="true"></i></span>
+                                    <span class="input-group-text" id="basic-addon2"><i class="fa fa-car mr-1" aria-hidden="true"></i></span>
                                 </div>
-                                <input type="text" class="form-control" name="name_of_house"  id="name_of_house" placeholder="Villa 9721 Glen Creek">
+                                <input type="text" class="form-control" name="name_of_car"  id="name_of_car" placeholder="E.g : Toyota v3">
                             </div>
                           </div>
+                    </div>
 
+                    <div class="form-row mt-2">
                        <div class="col-sm-12 col-md-3">
                           <label for="authors">Seller name</label>
                           <div class="input-group">
@@ -129,42 +104,35 @@ if (isset($_POST['house_view']) && !empty($_POST['house_view'])) {
                           </div>
                       </div>
 
-                  </div>
-
-                  <div class="form-row mt-2">
-
                         <div class="col-sm-12 col-md-3">
-                            <label for="authors">Property</label>
+                            <label for="authors">Vehicles</label>
                             <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-home mr-1" aria-hidden="true"></i></span>
+                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-car mr-1" aria-hidden="true"></i></span>
                             </div>
-                              <select class="form-control" name="categories_house_" id="categories_house_" onchange="getPropertyTypeHide(this)">
-                                <option  value="">-types of Property-</option>
-                                <option value="House_For_sale">House For sale</option>
-                                <option value="House_For_rent">House For rent</option>
-                                <option value="Land_For_sale">Land & Plot</option>
-                                <option value="Apartment_For_sale">Apartment For sale</option>
-                                <option value="Apartment_For_rent">Apartment For rent</option>
-                                <option value="room_For_rent">room</option>
-                                <option value="commerce_For_rent">commerce</option>
-                                <option value="Offices_For_rent">Offices</option>
+                              <select class="form-control" name="categories_car" id="categories_car" >
+                                <option  value="">- Category-</option>
+                                <option value="Car_For_sale">Car For sale</option>
+                                <option value="Car_For_rent">Car For rent</option>
+                                <option value="Truck_For_sale">Truck For sale</option>
+                                <option value="Buses_For_sale">Buses For sale</option>
+                                <option value="Motorcycle_For_sale">Motorcycle For sale</option>
+                                <option value="Bicycle_For_sale">Bicycle For sale</option>
                               </select>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-3" id="EquipmentHide">
-                           <label for="authors">Equipment</label>
-                           <div class="input-group">
+                        <div class="col-sm-12 col-md-3">
+                            <label for="authors">Mark</label>
+                            <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon2"><i class="fas fa-chair mr-1" aria-hidden="true"></i></span>
+                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-car mr-1" aria-hidden="true"></i></span>
                             </div>
-                           <select class="form-control" name="equipment_" id="equipment_">
-                             <option value="">-Select-</option>
-                             <option value="FURNISHED">Full furnished</option>
-                             <option value="UNFURNISHED">Unfurnished</option>
-                           </select>
-                          </div>
+                              <div id="myCar_type"></div>
+                            </div>
                         </div>
+                    </div>
+
+                    <div class="form-row mt-2">
                         <div class="col-sm-12 col-md-3">
                         <label for="authors">Price</label>
                           <div class="input-group">
@@ -174,64 +142,33 @@ if (isset($_POST['house_view']) && !empty($_POST['house_view'])) {
                             <input type="text" class="form-control" name="price" id="price" placeholder="Price ">
                           </div>
                         </div>
-                        <div class="col-12 col-md-3" id="bedroomsHide">
-                            <label for="authors">Minimum bedrooms</label>
-
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon2"><i class="fa fa-bed mr-1" aria-hidden="true"></i></span>
-                                </div>
-                                <select name="Minimum_bedrooms" id="Minimum_bedrooms" class="form-control">
-                                    <option value="">N* of bedrooms </option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="col-12 col-md-3" id="bathroomsHide">
-                            <label for="authors">Minimum bathrooms</label>
-
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon2"><i class="fa fa-bath mr-1" aria-hidden="true"></i></span>
-                                </div>
-                                <select name="Minimum_bathrooms" id="Minimum_bathrooms" class="form-control">
-                                    <option value="">N* of bathrooms </option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                    <option value="5">5</option>
-                                    <option value="6">6</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-3" id="carHide">
-                        <label for="authors">Minimum number of car</label>
+                        <div class="col-sm-12 col-md-3">
+                        <label for="authors">Price per</label>
                           <div class="input-group">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-car"></i></span>
+                                <span class="input-group-text" id="basic-addon2">Frw</span>
                             </div>
-                            <select name="car_in_garage" id="car_in_garage" class="form-control">
-                                <option value="">N* of car </option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                            </select>
+                            <select class="form-control" name="price_per_day" id="price_per_day" onchange="getPropertyTypeHide(this)">
+                                <option  value="">- Select -</option>
+                                <option value="per day">day</option>
+                                <option value="per week">week</option>
+                                <option value="per month">month</option>
+                              </select>
+                            </div>
+                          </div>
+                        <div class="col-sm-12 col-md-3" id="carHide">
+                        <label for="authors">year made</label>
+                          <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon2"><i class="fa fa-calendar"></i></span>
+                            </div>
+                            <input type="type" class="form-control" name="year_made" id="year_made" placeholder="1997">
                           </div>
                         </div>
-                      </div>
+                     </div>
 
                       <div class="form-group mt-2">
-                        <textarea class="form-control" name="additioninformation" id="addition-information" placeholder="tell us your property" rows="3"></textarea>
+                        <textarea class="form-control" name="additioninformation" id="addition-information" placeholder="tell us your Vehicle" rows="3"></textarea>
                       </div>
 
                       <div class="form-row mt-2">
@@ -315,23 +252,19 @@ if (isset($_POST['user_id']) && !empty($_POST['user_id'])) {
       $youtube=  "";
     }
 
-    $car_in_garage = $users->test_input($_POST['car_in_garage']);
-    $name_of_house = $users->test_input($_POST['name_of_house']);
+    $name_of_car = $users->test_input($_POST['name_of_car']);
+    $year_made = $users->test_input($_POST['year_made']);
     $authors = $users->test_input($_POST['authors']);
     $additioninformation = $users->test_input($_POST['additioninformation']);
-    $categories_house=  $users->test_input($_POST['categories_house_']);
+    $categories_house=  $users->test_input($_POST['categories_car']);
     $_rent_sale=(substr($categories_house,-4) == 'sale')? 'sale' : 'rent';
     $price = $users->test_input($_POST['price']);
-    $bathroom = $users->test_input($_POST['Minimum_bedrooms']);
-    $bedroom = $users->test_input($_POST['Minimum_bathrooms']);
-    $equipment = $users->test_input($_POST['equipment_']);
+    $price_per_day = $users->test_input($_POST['price_per_day']);
+    $car_marque = $users->test_input($_POST['car_marque']);
     $phone = $users->test_input($_POST['phone']);
-    $country = $users->test_input($_POST['country']);
     $province =  $users->test_input($_POST['provincecode']);
     $districts =  $users->test_input($_POST['districtcode']);
-    $cell=  $users->test_input($_POST['codecell']);
     $sector =  $users->test_input($_POST['sectorcode']);
-    $village =  $users->test_input($_POST['CodeVillage']);
     $code = $districts;
     $codes = (strlen($code) > 10)? 
     strtolower(date('Y').'_'.rand(10,100).substr($code,0,4)):
@@ -353,26 +286,22 @@ if (isset($_POST['user_id']) && !empty($_POST['user_id'])) {
 		}
 
 	$users->Postsjobscreates('house',array( 
-	'name_of_house'=> $name_of_house,
+	'name_of_car'=> $name_of_car,
+	'year_made'=> $year_made,
 	'authors'=> $authors,
-	'bathroom'=> $bathroom, 
-	'bedroom'=> $bedroom, 
-	'equipment'=> $equipment, 
-	'car_in_garage'=> $car_in_garage, 
 	'photo'=> $photo_, 
 	'other_photo'=> $other_photo_, 
 	'video'=> $video_, 
     'youtube'=> $youtube, 
     'price'=> $price,
+    'price_per_day'=> $price_per_day,
 	'phone'=> $phone,
-    'country01'=> $country,
 	'province'=> $province,
 	'districts'=> $districts,
 	'sector'=> $sector,
-	'cell'=> $cell,
-	'village'=> $village,
     'text'=> $additioninformation,
-    'categories_house'=> $categories_house,
+    'categories_car'=> $categories_house,
+    'car_marque'=> $car_marque,
     'buy'=> $_rent_sale,
     'user_id3'=> $user_id,
     'code'=> $codes,

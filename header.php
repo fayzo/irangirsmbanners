@@ -70,24 +70,24 @@
 		}		
 	}
 	
-    //Get cell list
-    function showResult3(){
-		var sectorcode=document.getElementById('sectorcode').value;
-		var params = "&sectorcode="+sectorcode+"";
-		http=new XMLHttpRequest();
-		http.open("POST","core/ajax_db/getcell.php",true);
-		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
-		http.send(params);
-		http.onreadystatechange = function() 
-		{//Call a function when the sector changes.
+    // //Get cell list
+    // function showResult3(){
+	// 	var sectorcode=document.getElementById('sectorcode').value;
+	// 	var params = "&sectorcode="+sectorcode+"";
+	// 	http=new XMLHttpRequest();
+	// 	http.open("POST","core/ajax_db/getcell.php",true);
+	// 	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded")
+	// 	http.send(params);
+	// 	http.onreadystatechange = function() 
+	// 	{//Call a function when the sector changes.
 			
-		document.getElementById("codecell").innerHTML=http.responseText;
+	// 	document.getElementById("codecell").innerHTML=http.responseText;
 				
-		if(document.getElementById('codecell').value!=="No Cell Available")
-		document.form.name.disabled=false;
+	// 	if(document.getElementById('codecell').value!=="No Cell Available")
+	// 	document.form.name.disabled=false;
 		
-		}		
-    }
+	// 	}		
+    // }
 
     //Get cell list
     function showResult3_search(){
@@ -121,9 +121,9 @@
   
     // THIS IS FOR PAGINATION PAGES
 
-    function houseCategoriesHomeSearch(categories,province,district,sector,pages,user_id) {
+    function houseCategoriesHomeSearch(categories,car_marque,pages,user_id) {
         $('#loader').show();
-        var params = '&pages=' + pages +'&categories='+categories+'&province='+province+'&district='+district+'&sector_list='+sector+'&user_id='+user_id;
+        var params = '&pages=' + pages +'&categories='+categories+'&car_marque='+car_marque+'&user_id='+user_id;
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'core/ajax_db/getcell.php',true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -144,9 +144,9 @@
 	
     // THIS IS FOR CATEGORIES PROPERTY SEARCH SECTOR
 	
-    function houseCategories_SeachSector(categories,province,district,sector,user_id,pages) {
+    function houseCategories_SeachSector(categories,car_marque,user_id,pages) {
         $('#loader').show();
-        var params = '&pages=' + pages +'&categories='+categories+'&province='+province+'&district='+district+'&sector_list='+sector+'&user_id='+user_id;
+        var params = '&pages=' + pages +'&categories='+categories+'&car_marque_list='+car_marque+'&user_id='+user_id;
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'core/ajax_db/getcell.php',true);
         xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -168,9 +168,9 @@
     
     // THIS IS FOR FOOTER SEARCH SECTOR HOUSE
 
-    function houseCategoriesFooter_SeachSector(categories,province,district,sector,pages,user_id){
+    function houseCategoriesFooter_SeachSector(categories,car_marque,pages,user_id){
         $('#loader').show();
-        var params = '&pages='+pages+'&categories='+categories+'&province='+province+'&district='+district+'&sector='+sector+'&user_id='+user_id;
+        var params = '&pages='+pages+'&categories='+categories+'&car_marque='+car_marque+'&user_id='+user_id;
 		http=new XMLHttpRequest();
 		http.open("POST","core/ajax_db/getcell.php",true);
 		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded")

@@ -633,7 +633,7 @@ class Users extends Db{
     public function countPOSTS()
     {
         $db =$this->database;
-        $sql= $db->query('SELECT COUNT(*) FROM house');
+        $sql= $db->query('SELECT COUNT(*) FROM car');
         $row_post = $sql->fetch_array();
         $total_post= array_shift($row_post);
         $array= array(0,$total_post);
@@ -644,7 +644,7 @@ class Users extends Db{
     public function countPost_sold()
     {
         $db =$this->database;
-        $sql= $db->query('SELECT COUNT(*) FROM house WHERE buy = "sold" ');
+        $sql= $db->query('SELECT COUNT(*) FROM car WHERE buy = "sold" ');
         $row_comment = $sql->fetch_array();
         $total_comment= array_shift($row_comment);
         $array= array(0,$total_comment);
@@ -655,7 +655,7 @@ class Users extends Db{
     public function countPost_rent()
     {
         $db =$this->database;
-        $sql= $db->query('SELECT COUNT(*) FROM house WHERE buy = "rent" ');
+        $sql= $db->query('SELECT COUNT(*) FROM car WHERE buy = "rent" ');
         $row_comment = $sql->fetch_array();
         $total_comment= array_shift($row_comment);
         $array= array(0,$total_comment);
@@ -666,7 +666,7 @@ class Users extends Db{
     public function countPost_sale()
     {
         $db =$this->database;
-        $sql= $db->query('SELECT COUNT(*) FROM house WHERE buy = "sale" ');
+        $sql= $db->query('SELECT COUNT(*) FROM car WHERE buy = "sale" ');
         $row_comment = $sql->fetch_array();
         $total_comment= array_shift($row_comment);
         $array= array(0,$total_comment);

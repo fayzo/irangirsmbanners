@@ -11,5 +11,5 @@ if ($users->loggedin() == false) {
     $Exit_msg= $notification->getTotal_msgCountExit($user_id);
 }
 
-echo $house->housecart_item(); 
+echo $house->car_cart_item(); 
 ?>

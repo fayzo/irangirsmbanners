@@ -28,8 +28,8 @@
             <div class="row">
                 <!-- /.col -->
                 <div class="col-md-9">
-                    <?php echo $watch_list->houseWatch_ListNavbar('House_For_sale',1,$user_id); ?>
-                    <?php echo $watch_list->houseWatch_ListHome('House_For_sale',1,$user_id); ?>
+                    <?php echo $watch_list->houseWatch_ListNavbar('Car_For_sale',1,$user_id); ?>
+                    <?php echo $watch_list->houseWatch_ListHome('Car_For_sale',1,$user_id); ?>
                 </div>
                 <!-- /.col -->
                 <div class="col-md-3">

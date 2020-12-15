@@ -280,37 +280,29 @@
                                 </button>
                             </div>
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link  active" href="#House_For_sale"
-                                    data-toggle="tab">House For sale
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('House_For_sale');?></span>
+                                <li class="nav-item"><a class="nav-link  active" href="#Car_For_sale"
+                                    data-toggle="tab">Car For sale
+                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('Car_For_sale');?></span>
                                 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#House_For_rent"
+                                <li class="nav-item"><a class="nav-link" href="#Car_For_rent"
                                     data-toggle="tab">House For rent
                                     <span class="badge badge-primary"><?php echo $house->housecountPOSTS('House_For_rent');?></span>
                                 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#apartment_For_rent"
-                                    data-toggle="tab">apartment For rent
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('apartment_For_rent');?></span>
+                                <li class="nav-item"><a class="nav-link" href="#Truck_For_sale"
+                                    data-toggle="tab">Truck For sale
+                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('Truck_For_sale');?></span>
                                 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#apartment_For_sale"
-                                    data-toggle="tab">apartment For sale
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('apartment_For_sale');?></span>
+                                <li class="nav-item"><a class="nav-link" href="#Buses_For_sale"
+                                    data-toggle="tab">Buses_For_sale
+                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('Buses_For_sale');?></span>
                                 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#Land_For_sale"
-                                    data-toggle="tab">Plot&Land
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('Land_For_sale');?></span>
+                                <li class="nav-item"><a class="nav-link" href="#Motorcycle_For_sale"
+                                    data-toggle="tab">Motorcycle For sale
+                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('Motorcycle_For_sale');?></span>
                                 </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#Office"
-                                    data-toggle="tab">Office
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('Offices_For_rent');?></span>
-                                </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#room"
-                                    data-toggle="tab">room
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('room_For_rent');?></span>
-                                </a></li>
-                                <li class="nav-item"><a class="nav-link" href="#Commerce"
-                                    data-toggle="tab">Commerce
-                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('commerce_For_rent');?></span>
+                                <li class="nav-item"><a class="nav-link" href="#Bicycle_For_sale"
+                                    data-toggle="tab">Bicycle_For_sale
+                                    <span class="badge badge-primary"><?php echo $house->housecountPOSTS('Bicycle_For_sale');?></span>
                                 </a></li>
                             </ul>
                             <!-- </div> -->
@@ -318,32 +310,23 @@
                         <div class="card-body">
                             <div id="responseHouseD"></div>
                             <div class="tab-content">
-                                <div class="tab-pane active " id="House_For_sale">
-                                    <?php echo $house->edit_delete_Adminproperty('House_For_sale'); ?>
+                                <div class="tab-pane active " id="Car_For_sale">
+                                    <?php echo $house->edit_delete_Adminproperty('Car_For_sale'); ?>
                                 </div> 
-                                <div class="tab-pane" id="House_For_rent">
-                                    <?php echo $house->edit_delete_Adminproperty('House_For_rent'); ?>
+                                <div class="tab-pane" id="Car_For_rent">
+                                    <?php echo $house->edit_delete_Adminproperty('Car_For_rent'); ?>
                                 </div>
-                                <div class="tab-pane" id="apartment_For_rent">
-                                <?php echo $house->edit_delete_Adminproperty('apartment_For_rent'); ?>
+                                <div class="tab-pane" id="Truck_For_sale">
+                                <?php echo $house->edit_delete_Adminproperty('Truck_For_sale'); ?>
                                 </div>
-                                <div class="tab-pane" id="apartment_For_sale">
-                                <?php echo $house->edit_delete_Adminproperty('apartment_For_sale'); ?>
+                                <div class="tab-pane" id="Buses_For_sale">
+                                <?php echo $house->edit_delete_Adminproperty('Buses_For_sale'); ?>
                                 </div>
-                                <div class="tab-pane" id="apartment_For_rent">
-                                <?php echo $house->edit_delete_Adminproperty('apartment_For_rent'); ?>
+                                <div class="tab-pane" id="Motorcycle_For_sale">
+                                <?php echo $house->edit_delete_Adminproperty('Motorcycle_For_sale'); ?>
                                 </div>
-                                <div class="tab-pane" id="Land_For_sale">
-                                <?php echo $house->edit_delete_Adminproperty('Land_For_sale'); ?>
-                                </div>
-                                <div class="tab-pane" id="Office">
-                                <?php echo $house->edit_delete_Adminproperty('Offices_For_rent'); ?>
-                                </div>
-                                <div class="tab-pane" id="room">
-                                <?php echo $house->edit_delete_Adminproperty('room_For_rent'); ?>
-                                </div>
-                                <div class="tab-pane" id="Commerce">
-                                <?php echo $house->edit_delete_Adminproperty('commerce_For_rent'); ?>
+                                <div class="tab-pane" id="Bicycle_For_sale">
+                                <?php echo $house->edit_delete_Adminproperty('Bicycle_For_sale'); ?>
                                 </div>
                             </div> <!-- /.tab-content -->
                         </div>
@@ -351,22 +334,22 @@
                             <nav class="main-menu">
                                 <ul>
                                     <li>
-                                        <a href="javascript:void(0)">Total Property Sold
+                                        <a href="javascript:void(0)">Total Vehicle Sold
                                         <span class="badge badge-primary"> <?php echo $users->countPost_sold(); ?></span>
                                     </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Total Property rent
+                                        <a href="javascript:void(0)">Total Vehicle rent
                                         <span class="badge badge-primary"><?php echo $users->countPost_rent(); ?></span>
                                     </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Total Property sale
+                                        <a href="javascript:void(0)">Total Vehicle sale
                                         <span class="badge badge-primary"> <?php echo $users->countPost_sale(); ?></span>
                                     </a>
                                     </li>
                                     <li>
-                                        <a href="javascript:void(0)">Total property
+                                        <a href="javascript:void(0)">Total Vehicle
                                         <span class="badge badge-primary"> <?php echo $users->countPOSTS(); ?></span>
                                     </a>
                                     </li>
@@ -484,8 +467,8 @@
                 
                 <div class="col-lg-6 col-sm-12">
                 <h4 class="display-5 mb-2 text-center">HOUSE ENQUIRE BY CLIENTS</h4>
-                    <?php echo $house->propertyView_HomeAdmin('House_For_sale',1,$user_id); ?>
-                    <?php echo $house->houseListAdmin('House_For_sale',1,$user_id); ?>
+                    <?php echo $house->propertyView_HomeAdmin('Car_For_sale',1,$user_id); ?>
+                    <?php echo $house->carListAdmin('Car_For_sale',1,$user_id); ?>
                 </div>
 
             </div>

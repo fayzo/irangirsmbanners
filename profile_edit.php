@@ -224,66 +224,52 @@
                         </button>
                     </div>
                     <ul class="nav nav-pills">
-                        <li class="nav-item"><a class="nav-link  active" href="#House_For_sale"
-                            data-toggle="tab">House For sale
-                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('House_For_sale',$user_id);?></span>
+                        <li class="nav-item"><a class="nav-link  active" href="#Car_For_sale"
+                            data-toggle="tab">Car For sale
+                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('Car_For_sale',$user_id);?></span>
                         </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#House_For_rent"
-                            data-toggle="tab">House For rent
-                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('House_For_rent',$user_id);?></span>
+                        <li class="nav-item"><a class="nav-link" href="#Car_For_rent"
+                            data-toggle="tab">Car For rent
+                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('Car_For_rent',$user_id);?></span>
                         </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#House_Land"
-                            data-toggle="tab">House Land
-                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('House_Land',$user_id);?></span>
+                        <li class="nav-item"><a class="nav-link" href="#Truck_For_sale"
+                            data-toggle="tab">Truck For sale
+                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('Truck_For_sale',$user_id);?></span>
                         </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Apartment_For_sale"
-                            data-toggle="tab">apartment For Sale
-                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('Apartment_For_sale',$user_id);?></span>
+                        <li class="nav-item"><a class="nav-link" href="#Buses_For_sale"
+                            data-toggle="tab">Buses For Sale
+                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('Buses_For_sale',$user_id);?></span>
                         </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Apartment_For_rent"
-                            data-toggle="tab">apartment For Rent
-                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('Apartment_For_rent',$user_id);?></span>
+                        <li class="nav-item"><a class="nav-link" href="#Motorcycle_For_sale"
+                            data-toggle="tab">Motorcycle For sale
+                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('Motorcycle_For_sale',$user_id);?></span>
                         </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#room_For_rent"
-                            data-toggle="tab">room
-                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('room_For_rent',$user_id);?></span>
-                        </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#commerce_For_rent"
-                            data-toggle="tab">Commerce
-                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('commerce_For_rent',$user_id);?></span>
-                        </a></li>
-                        <li class="nav-item"><a class="nav-link" href="#Offices_For_rent"
-                            data-toggle="tab">Office
-                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('Offices_For_rent',$user_id);?></span>
+                        <li class="nav-item"><a class="nav-link" href="#Bicycle_For_sale"
+                            data-toggle="tab">Bicycle For sale
+                            <span class="badge badge-primary"><?php echo $house->housecountAgentPOSTS('Bicycle_For_sale',$user_id);?></span>
                         </a></li>
                     </ul>
                     <!-- </div> -->
                 </div>
                 <div class="card-body">
                     <div class="tab-content">
-                        <div class="tab-pane active " id="House_For_sale">
-                            <?php echo $house->edit_delete_Agentproperty('House_For_sale',$user_id); ?>
+                        <div class="tab-pane active " id="Car_For_sale">
+                            <?php echo $house->edit_delete_Agentproperty('Car_For_sale',$user_id); ?>
                         </div> 
-                        <div class="tab-pane" id="House_For_rent">
-                            <?php echo $house->edit_delete_Agentproperty('House_For_rent',$user_id); ?>
+                        <div class="tab-pane" id="Car_For_rent">
+                            <?php echo $house->edit_delete_Agentproperty('Car_For_rent',$user_id); ?>
                         </div>
-                        <div class="tab-pane" id="House_Land">
-                        <?php echo $house->edit_delete_Agentproperty('House_Land',$user_id); ?>
+                        <div class="tab-pane" id="Truck_For_sale">
+                        <?php echo $house->edit_delete_Agentproperty('Truck_For_sale',$user_id); ?>
                         </div>
-                        <div class="tab-pane" id="Apartment_For_rent">
-                        <?php echo $house->edit_delete_Agentproperty('Apartment_For_rent',$user_id); ?>
+                        <div class="tab-pane" id="Buses_For_sale">
+                        <?php echo $house->edit_delete_Agentproperty('Buses_For_sale',$user_id); ?>
                         </div>
-                        <div class="tab-pane" id="Apartment_For_sale">
-                        <?php echo $house->edit_delete_Agentproperty('Apartment_For_sale',$user_id); ?>
+                        <div class="tab-pane" id="Motorcycle_For_sale">
+                        <?php echo $house->edit_delete_Agentproperty('Motorcycle_For_sale',$user_id); ?>
                         </div>
-                        <div class="tab-pane" id="room_For_rent">
-                        <?php echo $house->edit_delete_Agentproperty('room_For_rent',$user_id); ?>
-                        </div>
-                        <div class="tab-pane" id="commerce_For_rent">
-                        <?php echo $house->edit_delete_Agentproperty('commerce_For_rent',$user_id); ?>
-                        </div>
-                        <div class="tab-pane" id="Offices_For_rent">
-                        <?php echo $house->edit_delete_Agentproperty('Offices_For_rent',$user_id); ?>
+                        <div class="tab-pane" id="Bicycle_For_sale">
+                        <?php echo $house->edit_delete_Agentproperty('Bicycle_For_sale',$user_id); ?>
                         </div>
                     </div> <!-- /.tab-content -->
                 </div>

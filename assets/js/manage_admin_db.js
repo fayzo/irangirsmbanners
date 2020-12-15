@@ -240,12 +240,11 @@
                     $("#email_clientReqView").html(response.email);
                     $("#phone_clientReqView").html(response.phone);
                     $("#request_type_clientReqView").html(response.request_type);
-                    $("#property_clientReqView").html(response.property_type.replace(/_/g, " "));
-                    $("#Equipment_clientReqView").html(response.equipment);
-                    $("#Bedroom_clientReqView").html(response.bedroom);
-                    $("#Bathroom_clientReqView").html(response.bathroom);
+                    $("#property_clientReqView").html(response.category_type.replace(/_/g, " "));
+                    $("#Equipment_clientReqView").html(response.car_marque);
                     $("#Location_clientReqView").html(response.location);
                     $("#Price_clientReqView").html(Number(response.price).toLocaleString());
+                    $("#price_per_day_clientReqView").html(response.price_per_day);
                     $("#Currency_clientReqView").html(response.currency);
                     $("#date_clientReqView").html(response.datetime);
                     $("#Message_clientReqView").html(response.message_request);

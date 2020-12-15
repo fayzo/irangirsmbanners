@@ -25,7 +25,7 @@ class Home extends Users {
     {
 
         $insertValuesSQL ="";
-        $targetDir = DOCUMENT_ROOT.'/uploads/house/';
+        $targetDir = DOCUMENT_ROOT.'/uploads/car/';
         $allowTypes = array('jpg','png','jpeg','mp4','mp3', 'gif', 'bmp' , 'pdf' , 'doc' , 'ppt','docx', 'xlsx','xls','zip');
         
         foreach($file['name'] as $key => $value){

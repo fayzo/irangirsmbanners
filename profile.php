@@ -117,8 +117,8 @@
           </div>
           <!-- /.col -->
           <div class="col-md-9">
-                  <?php echo $profile_house_agent->house_Profile_house_agentNavbar('House_For_sale',1,$profileData['user_id']); ?>
-                  <?php echo $profile_house_agent->house_Profile_house_agentHome('House_For_sale',1,$profileData['user_id']); ?>
+                  <?php echo $profile_house_agent->house_Profile_house_agentNavbar('Car_For_sale',1,$profileData['user_id']); ?>
+                  <?php echo $profile_house_agent->house_Profile_house_agentHome('Car_For_sale',1,$profileData['user_id']); ?>
           </div>
           <!-- /.col -->
         </div>

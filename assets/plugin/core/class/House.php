@@ -54,14 +54,12 @@ class House extends Home {
                     <div class="col-lg-12">
                         <nav class="main-menus">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#House_For_sale" onclick="houseCategories('House_For_sale',1,<?php echo $user_id ; ?>);">House For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('House_For_sale');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#House_For_rent" onclick="houseCategories('House_For_rent',1,<?php echo $user_id ; ?>);">House For rent<span class="badge badge-primary"><?php echo $this->housecountPOSTS('House_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Land_For_sale" onclick="houseCategories('Land_For_sale',1,<?php echo $user_id ; ?>);">Land & Plots<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Land_For_sale');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Apartment_For_sale" onclick="houseCategories('Apartment_For_sale',1,<?php echo $user_id ; ?>);">Apartment For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Apartment_For_sale');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Apartment_For_rent" onclick="houseCategories('Apartment_For_rent',1,<?php echo $user_id ; ?>);">Apartment For rent<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Apartment_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#room_For_rent" onclick="houseCategories('room_For_rent',1,<?php echo $user_id ; ?>);">Room<span class="badge badge-primary"><?php echo $this->housecountPOSTS('room_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Commerce_For_rent" onclick="houseCategories('commerce_For_rent',1,<?php echo $user_id ; ?>);">Commerce<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Commerce_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Offices_For_rent" onclick="houseCategories('Offices_For_rent',1,<?php echo $user_id ; ?>);">Offices<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Offices_For_rent');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#Car_For_sale" data-toggle="tab"  onclick="houseCategories('Car_For_sale',1,<?php echo $user_id ; ?>);">Car For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Car_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Car_For_rent" data-toggle="tab" onclick="houseCategories('Car_For_rent',1,<?php echo $user_id ; ?>);">Car For rent<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Car_For_rent');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Truck_For_sale" data-toggle="tab"  onclick="houseCategories('Truck_For_sale',1,<?php echo $user_id ; ?>);">Truck For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Truck_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Buses_For_sale" data-toggle="tab"  onclick="houseCategories('Buses_For_sale',1,<?php echo $user_id ; ?>);">Buses For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Buses_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Motorcycle_For_sale" data-toggle="tab"  onclick="houseCategories('Motorcycle_For_sale',1,<?php echo $user_id ; ?>);">Motorcycle For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Motorcycle_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Bicycle_For_sale" data-toggle="tab"  onclick="houseCategories('Bicycle_For_sale',1,<?php echo $user_id ; ?>);">Bicycle For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Bicycle_For_sale');?></span></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -86,7 +84,7 @@ class House extends Home {
 
     // THIS IS ONE FOR THE SEARCHING IN PROVINCE,DISTRICT,SECTOR FOR FUNDING HOW MANY LOCATE HOUSE ARE IN
 
-    public function propertyView_SeachSectorNavbar($categories,$province,$district,$sector,$pages,$user_id){ ?>
+    public function propertyView_SeachSectorNavbar($categories,$car_marque,$pages,$user_id){ ?>
             
         <div class="property-navs border rounded" style="text-align: center;background:#f7f7f7;padding:10px 0 0;margin-bottom: 5px;">
             <div class="container">
@@ -95,14 +93,12 @@ class House extends Home {
                         <nav class="main-menus">
 
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#House_For_sale" onclick='houseCategories_SeachSector("House_For_sale",<?php echo "$province,$district,$sector,$user_id,$pages" ; ?>);'>House For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('House_For_sale',$province,$district,$sector);?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#House_For_rent" onclick='houseCategories_SeachSector("House_For_rent",<?php echo "$province,$district,$sector,$user_id,$pages" ; ?>);'>House For rent<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('House_For_rent',$province,$district,$sector);?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Land_For_sale" onclick='houseCategories_SeachSector("Land_For_sale",<?php echo "$province,$district,$sector,$user_id,$pages" ; ?>);'>Land & Plots<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('Land_For_sale',$province,$district,$sector);?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Apartment_For_sale" onclick='houseCategories_SeachSector("Apartment_For_sale",<?php echo "$province,$district,$sector,$user_id,$pages" ; ?>);'>Apartment For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('Apartment_For_sale',$province,$district,$sector);?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Apartment_For_rent" onclick='houseCategories_SeachSector("Apartment_For_rent",<?php echo "$province,$district,$sector,$user_id,$pages" ; ?>);'>Apartment For rent<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('Apartment_For_rent',$province,$district,$sector);?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#room_For_rent" onclick='houseCategories_SeachSector("room_For_rent",<?php echo "$province,$district,$sector,$user_id,$pages" ; ?>);'>Room<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('room_For_rent',$province,$district,$sector);?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Commerce_For_rent" onclick='houseCategories_SeachSector("commerce_For_rent",<?php echo "$province,$district,$sector,$user_id,$pages" ; ?>);'>Commerce<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('Commerce_For_rent',$province,$district,$sector);?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Offices_For_rent" onclick='houseCategories_SeachSector("Offices_For_rent",<?php echo "$province,$district,$sector,$user_id,$pages" ; ?>);'>Offices<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('Offices_For_rent',$province,$district,$sector);?></span></a></li>
+                                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Car_For_sale" onclick='houseCategories_SeachSector("Car_For_sale","<?php echo $car_marque ;?>"<?php echo ",$user_id,$pages" ; ?>);'>Car For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('Car_For_sale',"$car_marque");?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Car_For_rent" onclick='houseCategories_SeachSector("Car_For_rent","<?php echo $car_marque ;?>"<?php echo ",$user_id,$pages" ; ?>);'>Car For rent<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('Car_For_rent',"$car_marque");?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Truck_For_sale" onclick='houseCategories_SeachSector("Truck_For_sale","<?php echo $car_marque ;?>"<?php echo ",$user_id,$pages" ; ?>);'>Truck For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('Truck_For_sale',"$car_marque");?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Buses_For_sale" onclick='houseCategories_SeachSector("Buses_For_sale","<?php echo $car_marque ;?>"<?php echo ",$user_id,$pages" ; ?>);'>Buses For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('Buses_For_sale',"$car_marque");?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Motorcycle_For_sale" onclick='houseCategories_SeachSector("Motorcycle_For_sale","<?php echo $car_marque ;?>"<?php echo ",$user_id,$pages" ; ?>);'>Motorcycle For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('Motorcycle_For_rent',"$car_marque");?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Bicyle_For_sale" onclick='houseCategories_SeachSector("Bicyle_For_sale","<?php echo $car_marque ;?>"<?php echo ",$user_id,$pages" ; ?>);'>Bicyle For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS_SeachSector('Bicyle_For_sale',"$car_marque");?></span></a></li>
                             </ul>
                                 <a href="<?php echo (isset($_SESSION['key']))? HOME:F_INDEX; ?>" class="btn btn-primary btn-sm" style="float:right"><< Back</a>
                         </nav>
@@ -114,8 +110,9 @@ class House extends Home {
 
     <?php }
 
-    public function propertyView_SeachSectorList($categories,$province,$district,$sector,$pages,$user_id){
         
+    public function propertyView_SeachSectorList($categories,$car_marque,$pages,$user_id){
+            
         if($pages === 0 || $pages < 1){
             $showpages = 0 ;
         }else{
@@ -123,18 +120,17 @@ class House extends Home {
         }
         
         $mysqli= $this->database;
-        $query= $mysqli->query("SELECT * FROM house H
-		Left JOIN provinces P ON H. province = P. provincecode
-		Left JOIN districts M ON H. districts = M. districtcode
-		Left JOIN sectors T ON H. sector = T. sectorcode
+        $query= $mysqli->query("SELECT * FROM car H
+        Left JOIN provinces P ON H. province = P. provincecode
+        Left JOIN districts M ON H. districts = M. districtcode
+        Left JOIN sectors T ON H. sector = T. sectorcode
         Left JOIN users U ON H. user_id3 = U. user_id 
-        Left JOIN house_watchlist W ON H. house_id = W. house_id_list 
+        Left JOIN car_watchlist W ON H. car_id = W. car_id_list 
 
-        WHERE H. categories_house ='$categories'
-        and H. province= '{$province}' and H. districts= '{$district}'
-        and H. sector= '{$sector}' ORDER BY rand() , created_on3 Desc Limit $showpages,10");  ?>
-    
- 
+        WHERE H. categories_car ='$categories' and H. car_marque= '{$car_marque}' and H. car_marque != ''
+        ORDER BY rand() , created_on3 Desc Limit $showpages,10");  ?>
+
+
         <div id="house-hide" class="property-list mb-2"> 
             <div class="tab-content">
                 <div class="active tab-pane" id="<?php echo $categories; ?>">
@@ -143,15 +139,15 @@ class House extends Home {
                 <div class="timeline row">
 
             <?php 
-                while ($house = $query->fetch_array()) { ?>
-                <div class="single-property-item col-md-6"  id="response_hide_watchlist<?php echo $house['code']; ?>">
+                while ($car = $query->fetch_array()) { ?>
+                <div class="single-property-item col-md-6"  id="response_hide_watchlist<?php echo $car['code']; ?>">
 
-                <?php echo $this->buychangesColor($house['buy']); ?>
+                <?php echo $this->buychangesColor($car['buy']); ?>
                 <!-- <i class="bg-success text-light require" >Sale </i> -->
                 <i class="fa fa-user"></i>
 
-                <?php if($house['discount'] != 0){ ?>
-                <?php echo $this->PercentageDiscount($house['discount']); ?>
+                <?php if($car['discount'] != 0){ ?>
+                <?php echo $this->PercentageDiscount($car['discount']); ?>
                 <?php }else { echo ''; ?>
                     <!-- <span class="bg-info text-light" > 0% </span>  -->
                 <?php } ?>
@@ -160,13 +156,13 @@ class House extends Home {
 
                     <div class="col-md-12 px-0">
                         <div class="property-pic">
-                            <?php echo $this->banner($house['banner']) ;
-                                        $file = $house['photo']."=".$house['other_photo'];
+                            <?php echo $this->banner($car['banner']) ;
+                                        $file = $car['photo']."=".$car['other_photo'];
                                         $expode = explode("=",$file);  ?>
-                            <img class="propertyPicture" id="house-readmore" data-house="<?php echo $house['house_id']; ?>" src="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>" alt="">
+                            <img class="propertyPicture" id="car-readmore" data-car="<?php echo $car['car_id']; ?>" src="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>" alt="">
                         </div>
 
-                        <?php if ($house['buy'] == 'sold') { ?>
+                        <?php if ($car['buy'] == 'sold') { ?>
                             <div class="property-text photo_word"
                                 style="background: url('<?php echo BASE_URL.'assets/image/background_image/sold.png'; ?>')no-repeat center center;
                                     background-size:cover;height:100%;width:100%">
@@ -177,66 +173,66 @@ class House extends Home {
                             ';
                         } ?>
 
-                            <?php echo $this->edit_delete_house($user_id,$house['user_id3'],$house['house_id']); ?>
+                            <?php echo $this->edit_delete_car($user_id,$car['user_id3'],$car['car_id']); ?>
                             <h5 class="r-title" style="display: inline-block;">
                             <i class="fa fa-home" aria-hidden="true"></i>
                                 <?php 
-                                $subect = $house['categories_house'];
+                                $subect = $car['categories_car'];
                                 $replace = " ";
                                 $searching = "_";
                                 echo str_replace($searching,$replace, $subect);
                                 ?>
                             </h5> |
 
-                            <span class="h6 text-success text-uppercase ml-2"><?php echo $house['equipment']; ?></span>
+                            <span class="h6 text-success text-uppercase ml-2"><?php echo $car['car_marque']; ?></span>
                         
-                            <div> From:<span class="room-price price-change"> <?php echo $this->nice_number(number_format($house['price'])); ?> Frw
-                                <?php  echo (substr($house['categories_house'],-4) == 'sale')? '':'/month';?>
+                            <div> From:<span class="room-price price-change"> <?php echo $this->nice_number(number_format($car['price'])); ?> Frw
+                                <?php  echo (substr($car['categories_car'],-4) == 'sale')? '':'/month';?>
                                 </span>
-                                <?php if($house['price_discount'] != 0){ ?>
+                                <?php if($car['price_discount'] != 0){ ?>
                                     
                                 <span class="text-danger price-change" style="text-decoration: line-through;">
-                                <?php echo number_format($house['price_discount']); ?> Frw </span> <?php } ?>
+                                <?php echo number_format($car['price_discount']); ?> Frw </span> <?php } ?>
                             </div>
 
                             <!-- <div class="s-text">For Sale</div> -->
                         
-                            <?php if(isset($_SESSION['key'])){ if($house['user_id3_list'] != $user_id && $house['house_id_list'] != $house['house_id']  ){ ;?>
+                            <?php if(isset($_SESSION['key'])){ if($car['user_id3_list'] != $user_id && $car['car_id_list'] != $car['car_id']  ){ ;?>
                             <div class="text-muted clear-right" >
-                                    <form method="post" id="form-housecartitem<?php echo $house['code']; ?>add" class="float-right">
+                                    <form method="post" id="form-housecartitem<?php echo $car['code']; ?>add" class="float-right">
                                         <div style="display:inline-flex;" >
                                             <input type="hidden" style="width:30px;" name="user_id" value="<?php echo $user_id; ?>" />
                                             <input type="hidden" style="width:30px;" name="actions" value="add" />
-                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $house['code']; ?>" />
+                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $car['code']; ?>" />
                                             <input type="hidden" class="form-control form-control-sm text-center mr-2" style="width:30px;" name="quantitys" value="1" size="2" readonly/>
-                                            <input type="button" onclick="xxda('add','<?php echo 'form-housecartitem'.$house['code'].'add'; ?>','<?php echo $house['code']; ?>');" value="Add to WatchList" class="btn btn-outline-success btn-sm " />
+                                            <input type="button" onclick="xxda('add','<?php echo 'form-housecartitem'.$car['code'].'add'; ?>','<?php echo $car['code']; ?>');" value="Add to WatchList" class="btn btn-outline-success btn-sm " />
                                         </div>
                                     </form>
                                 </div>
                             <?php }else{ ;?>
                             <div class="text-muted clear-right" >
-                                    <form method="post" id="form-housecartitem<?php echo $house['code']; ?>remove"  class="float-right" >
-                                            <input type="hidden" style="width:30px;" name="user_id" value="<?php echo $house['user_id3_list']; ?>" />
-                                            <input type="hidden" style="width:30px;" name="house_id" value="<?php echo $house['house_id']; ?>" />
-                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $house['code']; ?>" />
+                                    <form method="post" id="form-housecartitem<?php echo $car['code']; ?>remove"  class="float-right" >
+                                            <input type="hidden" style="width:30px;" name="user_id" value="<?php echo $car['user_id3_list']; ?>" />
+                                            <input type="hidden" style="width:30px;" name="car_id" value="<?php echo $car['car_id']; ?>" />
+                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $car['code']; ?>" />
                                             <input type="hidden" style="width:30px;" name="actions" value="remove" />
-                                            <button type="button"  onclick="xxda_watch_list_delete('remove','<?php echo 'form-housecartitem'.$house['code'].'remove'; ?>','<?php echo $house['code']; ?>');"  class="btn btn-outline-danger btn-sm " ><img src="<?php echo BASE_URL_LINK ;?>image/img/icon-delete.png" alt="Remove Item" /> Remove on <br> Watch-list</button> 
+                                            <button type="button"  onclick="xxda_watch_list_delete('remove','<?php echo 'form-housecartitem'.$car['code'].'remove'; ?>','<?php echo $car['code']; ?>');"  class="btn btn-outline-danger btn-sm " ><img src="<?php echo BASE_URL_LINK ;?>image/img/icon-delete.png" alt="Remove Item" /> Remove on <br> Watch-list</button> 
                                     </form>
                             </div>
                             <?php } } ;?>
                         
-                            <a class="properties-location"  href="javascript:void(0)" id="house-readmore" data-house="<?php echo $house['house_id']; ?>" ><i class="icon_pin"></i>
-                            <!-- < ?php echo $house['provincename']; ?> /  -->
-                            <?php echo $house['namedistrict']; ?> District/ 
-                            <?php echo $house['namesector']; ?> Sector
-                            <!-- < ?php echo $house['nameCell']; ?> Cell  -->
+                            <a class="properties-location"  href="javascript:void(0)" id="car-readmore" data-car="<?php echo $car['car_id']; ?>" ><i class="icon_pin"></i>
+                            <!-- < ?php echo $car['provincename']; ?> /  -->
+                            <?php echo $car['namedistrict']; ?> District/ 
+                            <?php echo $car['namesector']; ?> Sector
+                            <!-- < ?php echo $car['nameCell']; ?> Cell  -->
                             </a>
                         </div>   
 
                     </div>
                     <!-- col- -->
                     <div class="col-md-12">
-                    <div id="response<?php echo $house['house_id']; ?>"></div>
+                    <div id="response<?php echo $car['car_id']; ?>"></div>
                     </div>
                 </div>
 
@@ -246,12 +242,12 @@ class House extends Home {
                             <div class="card-header" style="padding: 5px 10px;">
                                 <div class="card-tools pull-right">
 
-                                <?php if ($house['user_id3'] == isset($_SESSION['key'])) { ?>
+                                <?php if ($car['user_id3'] == isset($_SESSION['key'])) { ?>
 
                                     <!-- <button type="button"  class="btn btn-box-tool" data-widget="collapse">
                                         <i class="fa fa-plus"></i>
                                     </button> -->
-                                    <button type="button"  data-target="#a<?php echo $house['house_id'];?>" data-toggle="collapse" class="btn btn-box-tool" >
+                                    <button type="button"  data-target="#a<?php echo $car['car_id'];?>" data-toggle="collapse" class="btn btn-box-tool" >
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 <?php } ?>
@@ -260,40 +256,40 @@ class House extends Home {
                                 <div class="user-block">
                                     <div class="user-blockImgBorder">
                                         <div class="user-blockImg">
-                                            <?php if (!empty($house['profile_img'])) { ?>
-                                                <img src="<?php echo BASE_URL_LINK."image/users_profile_cover/".$house['profile_img']; ?>" alt="User Image">
+                                            <?php if (!empty($car['profile_img'])) { ?>
+                                                <img src="<?php echo BASE_URL_LINK."image/users_profile_cover/".$car['profile_img']; ?>" alt="User Image">
                                             <?php  }else{ ?>
                                                 <img src="<?php echo BASE_URL_LINK.NO_PROFILE_IMAGE;?>" alt="User Image">
                                             <?php } ?>
                                         </div>
                                     </div>
                                     <span class="username tooltips">
-                                        <a href="<?php  echo BASE_URL.$house['username'] ;?>"> <?php echo $house['lastname']; ?></a>
+                                        <a href="<?php  echo BASE_URL.$car['username'] ;?>"> <?php echo $car['lastname']; ?></a>
                                     </span>
-                                    <span class="description">Shared public - <?php echo $this->timeAgo($house['created_on3']); ?></span>
+                                    <span class="description">Shared public - <?php echo $this->timeAgo($car['created_on3']); ?></span>
                                 </div>
-                                <?php if ($house['user_id3'] != isset($_SESSION['key'])) { ?>
+                                <?php if ($car['user_id3'] != isset($_SESSION['key'])) { ?>
                                     <a href="javascript:void(0)" 
-                                        id="contacts_agent" data-user="<?php echo $house['user_id'];?>"
+                                        id="contacts_agent" data-user="<?php echo $car['user_id'];?>"
                                         class="btn btn-sm bg-teal">
                                             <i class="fas fa-comments"></i> Message  
                                     </a>
                                 <?php }else { ?>
                                     <a href="<?php echo VIEW_MESSAGE; ?>" class="btn btn-sm bg-teal">
                                     <i class="fas fa-eye"></i>  Message  
-                                        <?php  if($user_id == $house['user_id3']){  
-                                            echo $this->CountsCommentToAgent($house['house_id']);
+                                        <?php  if($user_id == $car['user_id3']){  
+                                            echo $this->CountsCommentToAgent($car['car_id']);
                                         } ?>
                                     </a>
                                 <?php } ?>
-                                For Request this property
+                                For Request this vehicle
                             </div>
                             <!-- <div class="card-body p-0" > -->
                                 <!-- this is for collapse use body javascript -->
-                            <div class="card collapse" id="a<?php echo $house['house_id'];?>" >
+                            <div class="card collapse" id="a<?php echo $car['car_id'];?>" >
                                 <?php  
-                                if($user_id == $house['user_id3']){  
-                                    $this->commentsToAgent($house['house_id']);
+                                if($user_id == $car['user_id3']){  
+                                    $this->commentsToAgent($car['car_id']);
                                 } ?>
                             </div>
                             <!-- </div> -->
@@ -324,9 +320,8 @@ class House extends Home {
                             </div></div>'; 
                 } 
 
-                $query1= $mysqli->query("SELECT COUNT(*) FROM house WHERE categories_house ='$categories'
-                            and province= '{$province}' and districts= '{$district}'
-                            and sector= '{$sector}' ");
+                $query1= $mysqli->query("SELECT COUNT(*) FROM car 
+                WHERE categories_car ='$categories' and car_marque= '{$car_marque}' ");
                 $row_Paginaion = $query1->fetch_array();
                 $total_Paginaion = array_shift($row_Paginaion);
                 $post_Perpages = $total_Paginaion/10;
@@ -336,17 +331,17 @@ class House extends Home {
                 <nav>
                     <ul class="pagination justify-content-center mt-3">
                         <?php if ($pages > 1) { ?>
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick='houseCategories_SeachSector("<?php echo $categories ;?>"<?php echo ",$province,$district,$sector,$user_id,";?><?php echo $pages-1 ;?>)'>Previous</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick='houseCategories_SeachSector("<?php echo $categories ;?>"<?php echo ",$car_marque,$user_id,";?><?php echo $pages-1 ;?>)'>Previous</a></li>
                         <?php } ?>
                         <?php for ($i=1; $i <= $post_Perpage; $i++) { 
                                 if ($i == $pages) { ?>
-                            <li class="page-item active"><a href="javascript:void(0)"  class="page-link" onclick='houseCategories_SeachSector("<?php echo $categories ;?>"<?php echo ",$province,$district,$sector,$user_id,$i"; ?>)' ><?php echo $i; ?> </a></li>
+                            <li class="page-item active"><a href="javascript:void(0)"  class="page-link" onclick='houseCategories_SeachSector("<?php echo $categories ;?>"<?php echo ",$car_marque,$user_id,$i"; ?>)' ><?php echo $i; ?> </a></li>
                             <?php }else{ ?>
-                            <li class="page-item"><a href="javascript:void(0)"  class="page-link" onclick='houseCategories_SeachSector("<?php echo $categories ;?>"<?php echo ",$province,$district,$sector,$user_id,$i"; ?>)' ><?php echo $i; ?> </a></li>
+                            <li class="page-item"><a href="javascript:void(0)"  class="page-link" onclick='houseCategories_SeachSector("<?php echo $categories ;?>"<?php echo ",$car_marque,$user_id,$i"; ?>)' ><?php echo $i; ?> </a></li>
                         <?php } } ?>
                         <?php if ($pages+1 <= $post_Perpage) { ?>
                             <!-- houseCategoriesHomeSearch -->
-                            <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick='houseCategories_SeachSector("<?php echo $categories ;?>"<?php echo ",$province,$district,$sector,$user_id,";?><?php echo $pages+1 ;?>)'>Next</a></li>
+                            <li class="page-item"><a class="page-link" href="javascript:void(0)" onclick='houseCategories_SeachSector("<?php echo $categories ;?>"<?php echo ",$car_marque,$user_id,";?><?php echo $pages+1 ;?>)'>Next</a></li>
                         <?php } ?>
                     </ul>
                 </nav>
@@ -359,7 +354,7 @@ class House extends Home {
 
     // THIS IS ONE FOR THE ADMIN AND AGENT TO VIEW MESSAGE IT HAVE BANNER AND PRICE DISCOUNT
 
-    public function houseListAdmin($categories,$pages,$user_id)
+    public function carListAdmin($categories,$pages,$user_id)
     {
         $pages= $pages;
         $categories= $categories;
@@ -370,16 +365,14 @@ class House extends Home {
             $showpages = ($pages*10)-10;
         }
         $mysqli= $this->database;
-        $query= $mysqli->query("SELECT * FROM house H
+        $query= $mysqli->query("SELECT * FROM car H
             Left JOIN provinces P ON H. province = P. provincecode
             Left JOIN districts M ON H. districts = M. districtcode
             Left JOIN sectors T ON H. sector = T. sectorcode
-            Left JOIN cells C ON H. cell = C. codecell
-            Left JOIN vilages V ON H. village = V. CodeVillage 
             Left JOIN users U ON H. user_id3 = U. user_id 
-            Left JOIN house_watchlist W ON H. house_id = W. house_id_list 
+            Left JOIN car_watchlist W ON H. car_id = W. car_id_list 
 
-        WHERE H. categories_house ='$categories' ORDER BY rand(), H. created_on3 Desc Limit $showpages,10");
+        WHERE H. categories_car ='$categories' ORDER BY rand(), H. created_on3 Desc Limit $showpages,10");
         ?>
 
         <div id="house-hide" > 
@@ -393,16 +386,16 @@ class House extends Home {
         <?php  if ($query->num_rows > 0 ) {  ?>
         <div class="timeline row">
         
-        <?php while($house= $query->fetch_array()) { ?>
+        <?php while($car= $query->fetch_array()) { ?>
 
-            <div class="single-property-item col-md-6"  id="response_hide_watchlist<?php echo $house['code']; ?>">
+            <div class="single-property-item col-md-6"  id="response_hide_watchlist<?php echo $car['code']; ?>">
 
-                <?php echo $this->buychangesColor($house['buy']); ?>
+                <?php echo $this->buychangesColor($car['buy']); ?>
                 <!-- <i class="bg-success text-light require" >Sale </i> -->
                 <i class="fa fa-user"></i>
 
-                <?php if($house['discount'] != 0){ ?>
-                <?php echo $this->PercentageDiscount($house['discount']); ?>
+                <?php if($car['discount'] != 0){ ?>
+                <?php echo $this->PercentageDiscount($car['discount']); ?>
                 <?php }else { echo ''; ?>
                     <!-- <span class="bg-info text-light" > 0% </span>  -->
                 <?php } ?>
@@ -411,13 +404,13 @@ class House extends Home {
 
                     <div class="col-md-12 px-0">
                         <div class="property-pic">
-                            <?php echo $this->banner($house['banner']) ;
-                                        $file = $house['photo']."=".$house['other_photo'];
+                            <?php echo $this->banner($car['banner']) ;
+                                        $file = $car['photo']."=".$car['other_photo'];
                                         $expode = explode("=",$file);  ?>
-                            <img class="propertyPicture" id="house-readmore" data-house="<?php echo $house['house_id']; ?>" src="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>" alt="">
+                            <img class="propertyPicture" id="car-readmore" data-car="<?php echo $car['car_id']; ?>" src="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>" alt="">
                         </div>
 
-                        <?php if ($house['buy'] == 'sold') { ?>
+                        <?php if ($car['buy'] == 'sold') { ?>
                             <div class="property-text photo_word"
                                 style="background: url('<?php echo BASE_URL.'assets/image/background_image/sold.png'; ?>')no-repeat center center;
                                     background-size:cover;height:100%;width:100%">
@@ -428,66 +421,66 @@ class House extends Home {
                             ';
                         } ?>
 
-                            <?php echo $this->edit_delete_house($user_id,$house['user_id3'],$house['house_id']); ?>
+                            <?php echo $this->edit_delete_car($user_id,$car['user_id3'],$car['car_id']); ?>
                             <h5 class="r-title" style="display: inline-block;">
-                            <i class="fa fa-home" aria-hidden="true"></i>
+                            
                                 <?php 
-                                $subect = $house['categories_house'];
+                                $subect = $car['categories_car'];
                                 $replace = " ";
                                 $searching = "_";
                                 echo str_replace($searching,$replace, $subect);
                                 ?>
                             </h5> |
 
-                            <span class="h6 text-success text-uppercase ml-2"><?php echo $house['equipment']; ?></span>
+                            <span class="h6 text-success text-uppercase ml-2"><?php echo $car['car_marque']; ?></span>
                         
-                            <div> From:<span class="room-price price-change"> <?php echo $this->nice_number(number_format($house['price'])); ?> Frw
-                                <?php  echo (substr($house['categories_house'],-4) == 'sale')? '':'/month';?>
+                            <div> From:<span class="room-price price-change"> <?php echo $this->nice_number(number_format($car['price'])); ?> Frw
+                                <?php  echo (substr($car['categories_car'],-4) == 'sale')? '':'/month';?>
                                 </span>
-                                <?php if($house['price_discount'] != 0){ ?>
+                                <?php if($car['price_discount'] != 0){ ?>
                                     
                                 <span class="text-danger price-change" style="text-decoration: line-through;">
-                                <?php echo number_format($house['price_discount']); ?> Frw </span> <?php } ?>
+                                <?php echo number_format($car['price_discount']); ?> Frw </span> <?php } ?>
                             </div>
 
                             <!-- <div class="s-text">For Sale</div> -->
                         
-                            <?php if(isset($_SESSION['key'])){ if($house['user_id3_list'] != $user_id && $house['house_id_list'] != $house['house_id']  ){ ;?>
+                            <?php if(isset($_SESSION['key'])){ if($car['user_id3_list'] != $user_id && $car['car_id_list'] != $car['car_id']  ){ ;?>
                             <div class="text-muted clear-right" >
-                                    <form method="post" id="form-housecartitem<?php echo $house['code']; ?>add" class="float-right">
+                                    <form method="post" id="form-housecartitem<?php echo $car['code']; ?>add" class="float-right">
                                         <div style="display:inline-flex;" >
                                             <input type="hidden" style="width:30px;" name="user_id" value="<?php echo $user_id; ?>" />
                                             <input type="hidden" style="width:30px;" name="actions" value="add" />
-                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $house['code']; ?>" />
+                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $car['code']; ?>" />
                                             <input type="hidden" class="form-control form-control-sm text-center mr-2" style="width:30px;" name="quantitys" value="1" size="2" readonly/>
-                                            <input type="button" onclick="xxda('add','<?php echo 'form-housecartitem'.$house['code'].'add'; ?>','<?php echo $house['code']; ?>');" value="Add to WatchList" class="btn btn-outline-success btn-sm " />
+                                            <input type="button" onclick="xxda('add','<?php echo 'form-housecartitem'.$car['code'].'add'; ?>','<?php echo $car['code']; ?>');" value="Add to WatchList" class="btn btn-outline-success btn-sm " />
                                         </div>
                                     </form>
                                 </div>
                             <?php }else{ ;?>
                             <div class="text-muted clear-right" >
-                                    <form method="post" id="form-housecartitem<?php echo $house['code']; ?>remove"  class="float-right" >
-                                            <input type="hidden" style="width:30px;" name="user_id" value="<?php echo $house['user_id3_list']; ?>" />
-                                            <input type="hidden" style="width:30px;" name="house_id" value="<?php echo $house['house_id']; ?>" />
-                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $house['code']; ?>" />
+                                    <form method="post" id="form-housecartitem<?php echo $car['code']; ?>remove"  class="float-right" >
+                                            <input type="hidden" style="width:30px;" name="user_id" value="<?php echo $car['user_id3_list']; ?>" />
+                                            <input type="hidden" style="width:30px;" name="car_id" value="<?php echo $car['car_id']; ?>" />
+                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $car['code']; ?>" />
                                             <input type="hidden" style="width:30px;" name="actions" value="remove" />
-                                            <button type="button"  onclick="xxda_watch_list_delete('remove','<?php echo 'form-housecartitem'.$house['code'].'remove'; ?>','<?php echo $house['code']; ?>');"  class="btn btn-outline-danger btn-sm " ><img src="<?php echo BASE_URL_LINK ;?>image/img/icon-delete.png" alt="Remove Item" /> Remove on <br> Watch-list</button> 
+                                            <button type="button"  onclick="xxda_watch_list_delete('remove','<?php echo 'form-housecartitem'.$car['code'].'remove'; ?>','<?php echo $car['code']; ?>');"  class="btn btn-outline-danger btn-sm " ><img src="<?php echo BASE_URL_LINK ;?>image/img/icon-delete.png" alt="Remove Item" /> Remove on <br> Watch-list</button> 
                                     </form>
                             </div>
                             <?php } } ;?>
                         
-                            <a class="properties-location"  href="javascript:void(0)" id="house-readmore" data-house="<?php echo $house['house_id']; ?>" ><i class="icon_pin"></i>
-                            <!-- < ?php echo $house['provincename']; ?> /  -->
-                            <?php echo $house['namedistrict']; ?> District/ 
-                            <?php echo $house['namesector']; ?> Sector
-                            <!-- < ?php echo $house['nameCell']; ?> Cell  -->
+                            <a class="properties-location"  href="javascript:void(0)" id="car-readmore" data-car="<?php echo $car['car_id']; ?>" ><i class="icon_pin"></i>
+                            <!-- < ?php echo $car['provincename']; ?> /  -->
+                            <?php echo $car['namedistrict']; ?> District/ 
+                            <?php echo $car['namesector']; ?> Sector
+                            <!-- < ?php echo $car['nameCell']; ?> Cell  -->
                             </a>
                         </div>   
 
                     </div>
                     <!-- col- -->
                     <div class="col-md-12">
-                    <div id="response<?php echo $house['house_id']; ?>"></div>
+                    <div id="response<?php echo $car['car_id']; ?>"></div>
                     </div>
                 </div>
 
@@ -497,12 +490,12 @@ class House extends Home {
                             <div class="card-header" style="padding: 5px 10px;">
                                 <div class="card-tools pull-right">
 
-                                <?php if ($house['user_id3'] == isset($_SESSION['key'])) { ?>
+                                <?php if ($car['user_id3'] == isset($_SESSION['key'])) { ?>
 
                                     <!-- <button type="button"  class="btn btn-box-tool" data-widget="collapse">
                                         <i class="fa fa-plus"></i>
                                     </button> -->
-                                    <button type="button"  data-target="#a<?php echo $house['house_id'];?>" data-toggle="collapse" class="btn btn-box-tool" >
+                                    <button type="button"  data-target="#a<?php echo $car['car_id'];?>" data-toggle="collapse" class="btn btn-box-tool" >
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 <?php } ?>
@@ -511,40 +504,40 @@ class House extends Home {
                                 <div class="user-block">
                                     <div class="user-blockImgBorder">
                                         <div class="user-blockImg">
-                                            <?php if (!empty($house['profile_img'])) { ?>
-                                                <img src="<?php echo BASE_URL_LINK."image/users_profile_cover/".$house['profile_img']; ?>" alt="User Image">
+                                            <?php if (!empty($car['profile_img'])) { ?>
+                                                <img src="<?php echo BASE_URL_LINK."image/users_profile_cover/".$car['profile_img']; ?>" alt="User Image">
                                             <?php  }else{ ?>
                                                 <img src="<?php echo BASE_URL_LINK.NO_PROFILE_IMAGE;?>" alt="User Image">
                                             <?php } ?>
                                         </div>
                                     </div>
                                     <span class="username tooltips">
-                                        <a href="<?php  echo BASE_URL.$house['username'] ;?>"> <?php echo $house['lastname']; ?></a>
+                                        <a href="<?php  echo BASE_URL.$car['username'] ;?>"> <?php echo $car['lastname']; ?></a>
                                     </span>
-                                    <span class="description">Shared public - <?php echo $this->timeAgo($house['created_on3']); ?></span>
+                                    <span class="description">Shared public - <?php echo $this->timeAgo($car['created_on3']); ?></span>
                                 </div>
-                                <?php if ($house['user_id3'] != isset($_SESSION['key'])) { ?>
+                                <?php if ($car['user_id3'] != isset($_SESSION['key'])) { ?>
                                     <a href="javascript:void(0)" 
-                                        id="contacts_agent" data-user="<?php echo $house['user_id'];?>"
+                                        id="contacts_agent" data-user="<?php echo $car['user_id'];?>"
                                         class="btn btn-sm bg-teal">
                                             <i class="fas fa-comments"></i> Message  
                                     </a>
                                 <?php }else { ?>
                                     <a href="<?php echo VIEW_MESSAGE; ?>" class="btn btn-sm bg-teal">
                                     <i class="fas fa-eye"></i>  Message  
-                                        <?php  if($user_id == $house['user_id3']){  
-                                            echo $this->CountsCommentToAgent($house['house_id']);
+                                        <?php  if($user_id == $car['user_id3']){  
+                                            echo $this->CountsCommentToAgent($car['car_id']);
                                         } ?>
                                     </a>
                                 <?php } ?>
-                                For Request this property
+                                For Request this vehicle
                             </div>
                             <!-- <div class="card-body p-0" > -->
                                 <!-- this is for collapse use body javascript -->
-                            <div class="card collapse" id="a<?php echo $house['house_id'];?>" >
+                            <div class="card collapse" id="a<?php echo $car['car_id'];?>" >
                                 <?php  
-                                if($user_id == $house['user_id3']){  
-                                    $this->commentsToAgent($house['house_id']);
+                                if($user_id == $car['user_id3']){  
+                                    $this->commentsToAgent($car['car_id']);
                                 } ?>
                             </div>
                             <!-- </div> -->
@@ -575,7 +568,7 @@ class House extends Home {
                             </div></div>'; 
                 } 
 
-                $query1= $mysqli->query("SELECT COUNT(*) FROM house WHERE categories_house ='$categories' ");
+                $query1= $mysqli->query("SELECT COUNT(*) FROM car Where categories_car ='$categories' ");
                 $row_Paginaion = $query1->fetch_array();
                 $total_Paginaion = array_shift($row_Paginaion);
                 $post_Perpages = $total_Paginaion/10;
@@ -608,7 +601,7 @@ class House extends Home {
     // THIS IS ONE FOR HOME IT HAVE BEST LAYOUT FOR HOUSE IT DOESN'T HAVE BANNER AND PRICE DISCOUNT
     // THIS IS ONE FOR HOME IT HAVE BEST LAYOUT FOR HOUSE IT DOESN'T HAVE BANNER AND PRICE DISCOUNT
 
-    public function property_navListHome($categories,$pages,$user_id) { ?>
+    public function car_navListHome($categories,$pages,$user_id) { ?>
 
         <div class="property-navs border rounded" style="text-align: center;background:#f7f7f7;padding:10px 0 0;margin-bottom: 25px;">
             <div class="container">
@@ -616,14 +609,12 @@ class House extends Home {
                     <div class="col-lg-12">
                         <nav class="main-menus">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a class="nav-link active" href="#House_For_sale" data-toggle="tab"  onclick="houseCategoriesHome('House_For_sale',1,<?php echo $user_id ; ?>);">House For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('House_For_sale');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#House_For_rent" data-toggle="tab" onclick="houseCategoriesHome('House_For_rent',1,<?php echo $user_id ; ?>);">House For rent<span class="badge badge-primary"><?php echo $this->housecountPOSTS('House_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#Land_For_sale" data-toggle="tab"  onclick="houseCategoriesHome('Land_For_sale',1,<?php echo $user_id ; ?>);">Land & Plots<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Land_For_sale');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#Apartment_For_sale" data-toggle="tab"  onclick="houseCategoriesHome('Apartment_For_sale',1,<?php echo $user_id ; ?>);">Apartment For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Apartment_For_sale');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#Apartment_For_rent" data-toggle="tab"  onclick="houseCategoriesHome('Apartment_For_rent',1,<?php echo $user_id ; ?>);">Apartment For rent<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Apartment_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#room_For_rent" data-toggle="tab"  onclick="houseCategoriesHome('room_For_rent',1,<?php echo $user_id ; ?>);">Room<span class="badge badge-primary"><?php echo $this->housecountPOSTS('room_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#Commerce_For_rent" data-toggle="tab"  onclick="houseCategoriesHome('commerce_For_rent',1,<?php echo $user_id ; ?>);">Commerce<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Commerce_For_rent');?></span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="#Offices_For_rent" data-toggle="tab"  onclick="houseCategoriesHome('Offices_For_rent',1,<?php echo $user_id ; ?>);">Offices<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Offices_For_rent');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link active" href="#Car_For_sale" data-toggle="tab"  onclick="houseCategoriesHome('Car_For_sale',1,<?php echo $user_id ; ?>);">Car For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Car_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Car_For_rent" data-toggle="tab" onclick="houseCategoriesHome('Car_For_rent',1,<?php echo $user_id ; ?>);">Car For rent<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Car_For_rent');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Truck_For_sale" data-toggle="tab"  onclick="houseCategoriesHome('Truck_For_sale',1,<?php echo $user_id ; ?>);">Truck For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Truck_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Buses_For_sale" data-toggle="tab"  onclick="houseCategoriesHome('Buses_For_sale',1,<?php echo $user_id ; ?>);">Buses For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Buses_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Motorcycle_For_sale" data-toggle="tab"  onclick="houseCategoriesHome('Motorcycle_For_sale',1,<?php echo $user_id ; ?>);">Motorcycle For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Motorcycle_For_sale');?></span></a></li>
+                                <li class="nav-item"><a class="nav-link" href="#Bicycle_For_sale" data-toggle="tab"  onclick="houseCategoriesHome('Bicycle_For_sale',1,<?php echo $user_id ; ?>);">Bicycle For sale<span class="badge badge-primary"><?php echo $this->housecountPOSTS('Bicycle_For_sale');?></span></a></li>
                             </ul>
                         </nav>
                     </div>
@@ -649,7 +640,7 @@ class House extends Home {
     // THIS IS ONE FOR HOME IT HAVE BEST LAYOUT FOR HOUSE IT DOESN'T HAVE BANNER AND PRICE DISCOUNT
     // THIS IS ONE FOR HOME IT HAVE BEST LAYOUT FOR HOUSE IT DOESN'T HAVE BANNER AND PRICE DISCOUNT
 
-    public function houseListHome($categories,$pages,$user_id)
+    public function carListHome($categories,$pages,$user_id)
     {
         $pages= $pages;
         $categories= $categories;
@@ -660,15 +651,13 @@ class House extends Home {
             $showpages = ($pages*10)-10;
         }
         $mysqli= $this->database;
-        $query= $mysqli->query("SELECT * FROM house H
+        $query= $mysqli->query("SELECT * FROM car H
             Left JOIN provinces P ON H. province = P. provincecode
             Left JOIN districts M ON H. districts = M. districtcode
             Left JOIN sectors T ON H. sector = T. sectorcode
-            Left JOIN cells C ON H. cell = C. codecell
-            Left JOIN vilages V ON H. village = V. CodeVillage 
-            Left JOIN house_watchlist W ON H. house_id = W. house_id_list 
+            Left JOIN car_watchlist W ON H. car_id = W. car_id_list 
             Left JOIN users U ON H. user_id3 = U. user_id 
-        WHERE H. categories_house ='$categories' ORDER BY rand(), H. created_on3 Desc Limit $showpages,10");
+        WHERE H. categories_car ='$categories' ORDER BY rand(), H. created_on3 Desc Limit $showpages,10");
         ?>
        
         <div id="house-hide" class="property-list mb-2">
@@ -681,16 +670,16 @@ class House extends Home {
         <?php  if ($query->num_rows > 0 ) {  ?>
         <div class="timeline row">
         
-       <?php while($house= $query->fetch_array()) { ?>
+       <?php while($car= $query->fetch_array()) { ?>
 
-            <div class="single-property-item col-md-6"  id="response_hide_watchlist<?php echo $house['code']; ?>">
+            <div class="single-property-item col-md-6"  id="response_hide_watchlist<?php echo $car['code']; ?>">
 
-                <?php echo $this->buychangesColor($house['buy']); ?>
+                <?php echo $this->buychangesColor($car['buy']); ?>
                 <!-- <i class="bg-success text-light require" >Sale </i> -->
                 <i class="fa fa-user"></i>
 
-                <?php if($house['discount'] != 0){ ?>
-                <?php echo $this->PercentageDiscount($house['discount']); ?>
+                <?php if($car['discount'] != 0){ ?>
+                <?php echo $this->PercentageDiscount($car['discount']); ?>
                 <?php }else { echo ''; ?>
                     <!-- <span class="bg-info text-light" > 0% </span>  -->
                 <?php } ?>
@@ -699,13 +688,13 @@ class House extends Home {
 
                     <div class="col-md-12 px-0">
                         <div class="property-pic">
-                            <?php echo $this->banner($house['banner']) ;
-                                        $file = $house['photo']."=".$house['other_photo'];
+                            <?php echo $this->banner($car['banner']) ;
+                                        $file = $car['photo']."=".$car['other_photo'];
                                         $expode = explode("=",$file);  ?>
-                            <img class="propertyPicture" id="house-readmore" data-house="<?php echo $house['house_id']; ?>" src="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>" alt="">
+                            <img class="propertyPicture" id="car-readmore" data-car="<?php echo $car['car_id']; ?>" src="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>" alt="">
                         </div>
 
-                        <?php if ($house['buy'] == 'sold') { ?>
+                        <?php if ($car['buy'] == 'sold') { ?>
                             <div class="property-text photo_word"
                                 style="background: url('<?php echo BASE_URL.'assets/image/background_image/sold.png'; ?>')no-repeat center center;
                                     background-size:cover;height:100%;width:100%">
@@ -716,66 +705,66 @@ class House extends Home {
                             ';
                         } ?>
 
-                            <?php echo $this->edit_delete_house($user_id,$house['user_id3'],$house['house_id']); ?>
+                            <?php echo $this->edit_delete_car($user_id,$car['user_id3'],$car['car_id']); ?>
                             <h5 class="r-title" style="display: inline-block;">
-                            <i class="fa fa-home" aria-hidden="true"></i>
+                            
                                 <?php 
-                                $subect = $house['categories_house'];
+                                $subect = $car['categories_car'];
                                 $replace = " ";
                                 $searching = "_";
                                 echo str_replace($searching,$replace, $subect);
                                 ?>
                             </h5> |
 
-                            <span class="h6 text-success text-uppercase ml-2"><?php echo $house['equipment']; ?></span>
+                            <span class="h6 text-success text-uppercase ml-2"><?php echo $car['car_marque']; ?></span>
                         
-                            <div> From:<span class="room-price price-change"> <?php echo $this->nice_number(number_format($house['price'])); ?> Frw
-                                <?php  echo (substr($house['categories_house'],-4) == 'sale')? '':'/month';?>
+                            <div> From:<span class="room-price price-change"> <?php echo $this->nice_number(number_format($car['price'])); ?> Frw
+                                <?php  echo (substr($car['categories_car'],-4) == 'sale')? '':'/month';?>
                                 </span>
-                                <?php if($house['price_discount'] != 0){ ?>
+                                <?php if($car['price_discount'] != 0){ ?>
                                     
                                 <span class="text-danger price-change" style="text-decoration: line-through;">
-                                <?php echo number_format($house['price_discount']); ?> Frw </span> <?php } ?>
+                                <?php echo number_format($car['price_discount']); ?> Frw </span> <?php } ?>
                             </div>
 
                             <!-- <div class="s-text">For Sale</div> -->
                         
-                            <?php if(isset($_SESSION['key'])){ if($house['user_id3_list'] != $user_id && $house['house_id_list'] != $house['house_id']  ){ ;?>
+                            <?php if(isset($_SESSION['key'])){ if($car['user_id3_list'] != $user_id && $car['car_id_list'] != $car['car_id']  ){ ;?>
                             <div class="text-muted clear-right" >
-                                    <form method="post" id="form-housecartitem<?php echo $house['code']; ?>add" class="float-right">
+                                    <form method="post" id="form-housecartitem<?php echo $car['code']; ?>add" class="float-right">
                                         <div style="display:inline-flex;" >
                                             <input type="hidden" style="width:30px;" name="user_id" value="<?php echo $user_id; ?>" />
                                             <input type="hidden" style="width:30px;" name="actions" value="add" />
-                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $house['code']; ?>" />
+                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $car['code']; ?>" />
                                             <input type="hidden" class="form-control form-control-sm text-center mr-2" style="width:30px;" name="quantitys" value="1" size="2" readonly/>
-                                            <input type="button" onclick="xxda('add','<?php echo 'form-housecartitem'.$house['code'].'add'; ?>','<?php echo $house['code']; ?>');" value="Add to WatchList" class="btn btn-outline-success btn-sm " />
+                                            <input type="button" onclick="xxda('add','<?php echo 'form-housecartitem'.$car['code'].'add'; ?>','<?php echo $car['code']; ?>');" value="Add to WatchList" class="btn btn-outline-success btn-sm " />
                                         </div>
                                     </form>
                                 </div>
                             <?php }else{ ;?>
                             <div class="text-muted clear-right" >
-                                    <form method="post" id="form-housecartitem<?php echo $house['code']; ?>remove"  class="float-right" >
-                                            <input type="hidden" style="width:30px;" name="user_id" value="<?php echo $house['user_id3_list']; ?>" />
-                                            <input type="hidden" style="width:30px;" name="house_id" value="<?php echo $house['house_id']; ?>" />
-                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $house['code']; ?>" />
+                                    <form method="post" id="form-housecartitem<?php echo $car['code']; ?>remove"  class="float-right" >
+                                            <input type="hidden" style="width:30px;" name="user_id" value="<?php echo $car['user_id3_list']; ?>" />
+                                            <input type="hidden" style="width:30px;" name="car_id" value="<?php echo $car['car_id']; ?>" />
+                                            <input type="hidden" style="width:30px;" name="code" value="<?php echo $car['code']; ?>" />
                                             <input type="hidden" style="width:30px;" name="actions" value="remove" />
-                                            <button type="button"  onclick="xxda_watch_list_delete('remove','<?php echo 'form-housecartitem'.$house['code'].'remove'; ?>','<?php echo $house['code']; ?>');"  class="btn btn-outline-danger btn-sm " ><img src="<?php echo BASE_URL_LINK ;?>image/img/icon-delete.png" alt="Remove Item" /> Remove on <br> Watch-list</button> 
+                                            <button type="button"  onclick="xxda_watch_list_delete('remove','<?php echo 'form-housecartitem'.$car['code'].'remove'; ?>','<?php echo $car['code']; ?>');"  class="btn btn-outline-danger btn-sm " ><img src="<?php echo BASE_URL_LINK ;?>image/img/icon-delete.png" alt="Remove Item" /> Remove on <br> Watch-list</button> 
                                     </form>
                             </div>
                             <?php } } ;?>
                         
-                            <a class="properties-location"  href="javascript:void(0)" id="house-readmore" data-house="<?php echo $house['house_id']; ?>" ><i class="icon_pin"></i>
-                            <!-- < ?php echo $house['provincename']; ?> /  -->
-                            <?php echo $house['namedistrict']; ?> District/ 
-                            <?php echo $house['namesector']; ?> Sector
-                            <!-- < ?php echo $house['nameCell']; ?> Cell  -->
+                            <a class="properties-location"  href="javascript:void(0)" id="car-readmore" data-car="<?php echo $car['car_id']; ?>" ><i class="icon_pin"></i>
+                            <!-- < ?php echo $car['provincename']; ?> /  -->
+                            <?php echo $car['namedistrict']; ?> District/ 
+                            <?php echo $car['namesector']; ?> Sector
+                            <!-- < ?php echo $car['nameCell']; ?> Cell  -->
                             </a>
                         </div>   
 
                     </div>
                     <!-- col- -->
                     <div class="col-md-12">
-                    <div id="response<?php echo $house['house_id']; ?>"></div>
+                    <div id="response<?php echo $car['car_id']; ?>"></div>
                     </div>
                 </div>
 
@@ -785,12 +774,12 @@ class House extends Home {
                             <div class="card-header" style="padding: 5px 10px;">
                                 <div class="card-tools pull-right">
 
-                                <?php if ($house['user_id3'] == isset($_SESSION['key'])) { ?>
+                                <?php if ($car['user_id3'] == isset($_SESSION['key'])) { ?>
 
                                     <!-- <button type="button"  class="btn btn-box-tool" data-widget="collapse">
                                         <i class="fa fa-plus"></i>
                                     </button> -->
-                                    <button type="button"  data-target="#a<?php echo $house['house_id'];?>" data-toggle="collapse" class="btn btn-box-tool" >
+                                    <button type="button"  data-target="#a<?php echo $car['car_id'];?>" data-toggle="collapse" class="btn btn-box-tool" >
                                         <i class="fa fa-plus"></i>
                                     </button>
                                 <?php } ?>
@@ -799,40 +788,40 @@ class House extends Home {
                                 <div class="user-block">
                                     <div class="user-blockImgBorder">
                                         <div class="user-blockImg">
-                                            <?php if (!empty($house['profile_img'])) { ?>
-                                                <img src="<?php echo BASE_URL_LINK."image/users_profile_cover/".$house['profile_img']; ?>" alt="User Image">
+                                            <?php if (!empty($car['profile_img'])) { ?>
+                                                <img src="<?php echo BASE_URL_LINK."image/users_profile_cover/".$car['profile_img']; ?>" alt="User Image">
                                             <?php  }else{ ?>
                                                 <img src="<?php echo BASE_URL_LINK.NO_PROFILE_IMAGE;?>" alt="User Image">
                                             <?php } ?>
                                         </div>
                                     </div>
                                     <span class="username tooltips">
-                                        <a href="<?php  echo BASE_URL.$house['username'] ;?>"> <?php echo $house['lastname']; ?></a>
+                                        <a href="<?php  echo BASE_URL.$car['username'] ;?>"> <?php echo $car['lastname']; ?></a>
                                     </span>
-                                    <span class="description">Shared public - <?php echo $this->timeAgo($house['created_on3']); ?></span>
+                                    <span class="description">Shared public - <?php echo $this->timeAgo($car['created_on3']); ?></span>
                                 </div>
-                                <?php if ($house['user_id3'] != isset($_SESSION['key'])) { ?>
+                                <?php if ($car['user_id3'] != isset($_SESSION['key'])) { ?>
                                     <a href="javascript:void(0)" 
-                                        id="contacts_agent" data-user="<?php echo $house['user_id'];?>"
+                                        id="contacts_agent" data-user="<?php echo $car['user_id'];?>"
                                         class="btn btn-sm bg-teal">
                                             <i class="fas fa-comments"></i> Message  
                                     </a>
                                 <?php }else { ?>
                                     <a href="<?php echo VIEW_MESSAGE; ?>" class="btn btn-sm bg-teal">
                                     <i class="fas fa-eye"></i>  Message  
-                                        <?php  if($user_id == $house['user_id3']){  
-                                            echo $this->CountsCommentToAgent($house['house_id']);
+                                        <?php  if($user_id == $car['user_id3']){  
+                                            echo $this->CountsCommentToAgent($car['car_id']);
                                         } ?>
                                     </a>
                                 <?php } ?>
-                                For Request this property
+                                For Request this vehicle
                             </div>
                             <!-- <div class="card-body p-0" > -->
                                 <!-- this is for collapse use body javascript -->
-                            <div class="card collapse" id="a<?php echo $house['house_id'];?>" >
+                            <div class="card collapse" id="a<?php echo $car['car_id'];?>" >
                                 <?php  
-                                if($user_id == $house['user_id3']){  
-                                    $this->commentsToAgent($house['house_id']);
+                                if($user_id == $car['user_id3']){  
+                                    $this->commentsToAgent($car['car_id']);
                                 } ?>
                             </div>
                             <!-- </div> -->
@@ -861,7 +850,7 @@ class House extends Home {
                             </div></div>'; 
                 } 
 
-                $query1= $mysqli->query("SELECT COUNT(*) FROM house WHERE categories_house ='$categories' ");
+                $query1= $mysqli->query("SELECT COUNT(*) FROM car Where categories_car ='$categories' ");
                 $row_Paginaion = $query1->fetch_array();
                 $total_Paginaion = array_shift($row_Paginaion);
                 $post_Perpages = $total_Paginaion/10;
@@ -891,7 +880,7 @@ class House extends Home {
     </div>';
     }
 
-    public function housecart_item(){
+    public function car_cart_item(){
 
         $mysqli= $this->database;
         $db_handle = $mysqli;
@@ -899,17 +888,17 @@ class House extends Home {
         switch($_POST["actions"]) {
         	case "add":
         		if(!empty($_POST["quantitys"])) {
-        			$productByCode = $this->runQuery("SELECT * FROM house WHERE code='" . $_POST["code"] . "'");
-        			$itemArray = array($productByCode[0]["code"]=>array('name'=>$productByCode[0]["name_of_house"], 'code'=>$productByCode[0]["code"],'user_id'=>$_POST["user_id"], 'quantitys'=>$_POST["quantitys"], 'price'=>$productByCode[0]["price"], 'image'=>$productByCode[0]["photo"], 'house_id'=>$productByCode[0]["house_id"], 'user_id3'=>$productByCode[0]["user_id3"], 'categories'=>$productByCode[0]["categories_house"]));
+        			$productByCode = $this->runQuery("SELECT * FROM car Where code='" . $_POST["code"] . "'");
+        			$itemArray = array($productByCode[0]["code"]=>array('name'=>$productByCode[0]["name_of_car"], 'code'=>$productByCode[0]["code"],'user_id'=>$_POST["user_id"], 'quantitys'=>$_POST["quantitys"], 'price'=>$productByCode[0]["price"], 'image'=>$productByCode[0]["photo"], 'car_id'=>$productByCode[0]["car_id"], 'user_id3'=>$productByCode[0]["user_id3"], 'categories'=>$productByCode[0]["categories_car"]));
         			
-        			if(!empty($_SESSION["housecart_item"])) {    
-        				if(in_array($productByCode[0]["code"],array_keys($_SESSION["housecart_item"]))) {
-        					foreach($_SESSION["housecart_item"] as $k => $v) {
+        			if(!empty($_SESSION["car_cart_item"])) {    
+        				if(in_array($productByCode[0]["code"],array_keys($_SESSION["car_cart_item"]))) {
+        					foreach($_SESSION["car_cart_item"] as $k => $v) {
         							if($productByCode[0]["code"] == $k) {
-        								if(empty($_SESSION["housecart_item"][$k]["quantitys"])) {
-                                            $_SESSION["housecart_item"][$k]["quantitys"] = 0;
+        								if(empty($_SESSION["car_cart_item"][$k]["quantitys"])) {
+                                            $_SESSION["car_cart_item"][$k]["quantitys"] = 0;
                                         }
-                                        // $_SESSION["housecart_item"][$k]["quantitys"] += $_POST["quantitys"];
+                                        // $_SESSION["car_cart_item"][$k]["quantitys"] += $_POST["quantitys"];
                                         // THIS IS MULTIPLE SAME AS ITEMS LOOK A LIKE 
         							}
                             }
@@ -917,78 +906,78 @@ class House extends Home {
         				} else {
                                 // THIS IS DIFFERENT ITEMS NOT LOOK A LIKE 
                             foreach($itemArray as $k => $v) {
-                                // var_dump($itemArray[$k]["house_id"],$itemArray[$k]["code"]);
-                                $this->insertQuery('house_watchlist',array(
-                                    'house_id_list' => $itemArray[$k]["house_id"], 
+                                // var_dump($itemArray[$k]["car_id"],$itemArray[$k]["code"]);
+                                $this->insertQuery('car_watchlist',array(
+                                    'car_id_list' => $itemArray[$k]["car_id"], 
                                     'user_id3_list' => $_POST["user_id"],  
-                                    'code_house_list' => $itemArray[$k]["code"],  
+                                    'code_car_list' => $itemArray[$k]["code"],  
                                     'categories'=> $itemArray[$k]["categories"],  
-                                    'status_house' => '0',
+                                    'status_car' => '0',
                                 ));  
                             }
-                            $_SESSION["housecart_item"] = array_merge($_SESSION["housecart_item"],$itemArray);
+                            $_SESSION["car_cart_item"] = array_merge($_SESSION["car_cart_item"],$itemArray);
         				}
         			} else {
-                        // THIS IS ITEMS NOT HAVE $_SESSION["housecart_item"] 
+                        // THIS IS ITEMS NOT HAVE $_SESSION["car_cart_item"] 
                         foreach($itemArray as $k => $v) {
-                            // var_dump($itemArray[$k]["house_id"],$itemArray[$k]["code"], $_POST["user_id"]);
+                            // var_dump($itemArray[$k]["car_id"],$itemArray[$k]["code"], $_POST["user_id"]);
 
-                            $this->insertQuery('house_watchlist',array(
-                                'house_id_list' => $itemArray[$k]["house_id"], 
+                            $this->insertQuery('car_watchlist',array(
+                                'car_id_list' => $itemArray[$k]["car_id"], 
                                 'user_id3_list' => $_POST["user_id"],  
-                                'code_house_list' => $itemArray[$k]["code"],  
+                                'code_car_list' => $itemArray[$k]["code"],  
                                 'categories'=> $itemArray[$k]["categories"],  
-                                'status_house' => '0',
+                                'status_car' => '0',
                             ));  
                         }
-                        $_SESSION["housecart_item"] = $itemArray;
+                        $_SESSION["car_cart_item"] = $itemArray;
 
         			}
                 }
-             exit($this->houseshowCart_itemSale());
+             exit($this->car_showCart_itemSale());
                 
         	break;
             case "remove":
-                $productByCode = $this->runQuery("SELECT * FROM house_watchlist WHERE code_house_list='" . $_POST["code"] . "' AND user_id3_list='" . $_POST["user_id"] . "'");
-                $itemArray = array($productByCode[0]["code_house_list"]=>array('house_watchlist_id'=>$productByCode[0]["house_watchlist_id"], 'code_house_list'=>$productByCode[0]["code_house_list"]));
+                $productByCode = $this->runQuery("SELECT * FROM car_watchlist WHERE code_car_list='" . $_POST["code"] . "' AND user_id3_list='" . $_POST["user_id"] . "'");
+                $itemArray = array($productByCode[0]["code_car_list"]=>array('car_watchlist_id'=>$productByCode[0]["car_watchlist_id"], 'code_car_list'=>$productByCode[0]["code_car_list"]));
                 
-                if(!empty($_SESSION["housecart_item"])) {
+                if(!empty($_SESSION["car_cart_item"])) {
                     foreach( $itemArray as $k => $v) {
                             // THIS IS TO UPDATE AS 1 TO EDICATE AS HOUSE REMOVE
-                            $this->delete('house_watchlist',array(
-                                'house_watchlist_id' =>  $itemArray[$k]["house_watchlist_id"], 
+                            $this->delete('car_watchlist',array(
+                                'car_watchlist_id' =>  $itemArray[$k]["car_watchlist_id"], 
                             ));
                             
-                            // $this->updateQuery('house_watchlist',array(
-                            //     'status_house' => '1', 
+                            // $this->updateQuery('car_watchlist',array(
+                            //     'status_car' => '1', 
                             // ),array(
-                            //     'code_house_list' =>  $itemArray[$k]["code_house_list"], 
-                            //     'house_watchlist_id' =>  $itemArray[$k]["house_watchlist_id"], 
+                            //     'code_car_list' =>  $itemArray[$k]["code_car_list"], 
+                            //     'car_watchlist_id' =>  $itemArray[$k]["car_watchlist_id"], 
                             // ));
 
         					if($_POST["code"] == $k)
-                                unset($_SESSION["housecart_item"][$k]);
+                                unset($_SESSION["car_cart_item"][$k]);
                                 
-                            if(empty($_SESSION["housecart_item"]))
-                                unset($_SESSION["housecart_item"]);
+                            if(empty($_SESSION["car_cart_item"]))
+                                unset($_SESSION["car_cart_item"]);
 
         			}
                 }
-             exit($this->houseshowCart_itemSale());
+             exit($this->car_showCart_itemSale());
         	break;
         	case "empty":
-        		unset($_SESSION["housecart_item"]);
+        		unset($_SESSION["car_cart_item"]);
         	break;	
         }
         }
     }
 	
-    public function houseshowCart_itemSale(){
+    public function car_showCart_itemSale(){
 
-        if(isset($_SESSION["housecart_item"])){
+        if(isset($_SESSION["car_cart_item"])){
                 $total_quantitys = 0;
                 $total_price = 0;
-                // echo  var_dump($_SESSION["housecart_item"]);
+                // echo  var_dump($_SESSION["car_cart_item"]);
             ?>	
             <table class="table table-responsive-sm table-hover table-bordered" id="houseshowcart">
              <thead class="main-active" style="background: #f7f7f7;">
@@ -1000,11 +989,11 @@ class House extends Home {
 			 </thead>
              <tbody class="bg-light">
             <?php		
-                foreach ($_SESSION["housecart_item"] as $item){
+                foreach ($_SESSION["car_cart_item"] as $item){
                     $item_price = $item["quantitys"]*$item["price"];
             		?>
             		<tr>
-                    <td style="background: url('<?php echo BASE_URL;?>uploads/house/<?php echo $item["image"]; ?>')no-repeat center center;background-size:contain;height:80px;width:80px;position:relative">
+                    <td style="background: url('<?php echo BASE_URL;?>uploads/car/<?php echo $item["image"]; ?>')no-repeat center center;background-size:contain;height:80px;width:80px;position:relative">
                     <div style="position:absolute;bottom:0px;left:0px;background-color:#0000006e;color:white;width: 100%;"><?php
                     if (strlen($item["name"]) > 12) {
                       echo $item["name"] = substr($item["name"],0,12).'..';
@@ -1023,7 +1012,7 @@ class House extends Home {
                                         echo str_replace($searching,$replace, $subect);
                                         ?>
                                 </div>
-                            <a href="javascript:void(0)" id="house-readmore" data-house="<?php echo $item['house_id']; ?>" >
+                            <a href="javascript:void(0)" id="car-readmore" data-car="<?php echo $item['car_id']; ?>" >
                             => Click Link</a>
                             </td>
             				<td align="center">
@@ -1060,13 +1049,13 @@ class House extends Home {
             } 
     }
 
-    public function commentsToAgent($house_id)
+    public function commentsToAgent($car_id)
     {
         $mysqli= $this->database;
         $query= "SELECT * FROM agent_message A 
-        LEFT JOIN house H ON A. house_id_msg = H. house_id
+        LEFT JOIN car H ON A. car_id_msg = H. car_id
         LEFT JOIN users U ON A. user_id3 = U. user_id  
-        WHERE A. house_id_msg = $house_id ORDER BY datetime DESC ";
+        WHERE A. car_id_msg = $car_id ORDER BY datetime DESC ";
         $result= $mysqli->query($query);
         // $comments= array(); 
         
@@ -1111,7 +1100,7 @@ class House extends Home {
     {
         $mysqli= $this->database;
         $query= "SELECT * FROM agent_message A 
-        LEFT JOIN house H ON A. house_id_msg = H. house_id
+        LEFT JOIN car H ON A. car_id_msg = H. car_id
         LEFT JOIN users U ON A. user_id3 = U. user_id  
         WHERE A. user_id3 = $user_id ORDER BY datetime DESC ";
         $result= $mysqli->query($query);
@@ -1143,7 +1132,7 @@ class House extends Home {
                                 $file = $row['photo'];
                                 $expode = explode("=",$file);  ?>
                                 <img class="img-avatar" width="80px" 
-                                    src="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>" alt="">
+                                    src="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>" alt="">
                             </div>
                         </td>
                         <td><?php echo $row['name_client'] ; ?></td>
@@ -1164,9 +1153,9 @@ class House extends Home {
         </table>
 <?php  }
     
-    public function CountsCommentToAgent($house_id){
+    public function CountsCommentToAgent($car_id){
       $db =$this->database;
-      $query="SELECT COUNT(*) FROM agent_message WHERE house_id_msg= $house_id";
+      $query="SELECT COUNT(*) FROM agent_message WHERE car_id_msg= $car_id";
       $sql= $db->query($query);
       $row_Comment = $sql->fetch_array();
       $total_Comment= array_shift($row_Comment);
@@ -1194,7 +1183,7 @@ class House extends Home {
       public function housecountPOSTS($categories)
     {
         $db =$this->database;
-        $sql= $db->query("SELECT COUNT(*) FROM house WHERE categories_house ='$categories' ");
+        $sql= $db->query("SELECT COUNT(*) FROM car WHERE categories_car ='$categories' ");
         $row_post = $sql->fetch_array();
         $total_post= array_shift($row_post);
         $array= array(0,$total_post);
@@ -1202,16 +1191,11 @@ class House extends Home {
         echo $total_posts;
     }
 
-      public function housecountPOSTS_SeachSector($categories,$province,$district,$sector)
+      public function housecountPOSTS_SeachSector($categories,$car_marque)
     {
         $db =$this->database;
-        $sql= $db->query("SELECT COUNT(*) FROM house H
-		Left JOIN provinces P ON H. province = P. provincecode
-		Left JOIN districts M ON H. districts = M. districtcode
-		Left JOIN sectors T ON H. sector = T. sectorcode
-
-        WHERE H.categories_house ='$categories' AND 
-        H. province = '$province' AND H. districts = '$district' AND H. sector= '$sector' ");
+        $sql= $db->query("SELECT COUNT(*) FROM car H
+        WHERE H. car_marque ='$car_marque' AND  H. categories_car ='$categories' ");
         // var_dump($sql);
         $row_post = $sql->fetch_array();
         $total_post= array_shift($row_post);
@@ -1223,7 +1207,7 @@ class House extends Home {
       public function housecountAgentPOSTS($categories,$id)
     {
         $db =$this->database;
-        $sql= $db->query("SELECT COUNT(*) FROM house WHERE categories_house ='$categories' AND user_id3=$id");
+        $sql= $db->query("SELECT COUNT(*) FROM car Where categories_car ='$categories' AND user_id3=$id");
         $row_post = $sql->fetch_array();
         $total_post= array_shift($row_post);
         $array= array(0,$total_post);
@@ -1339,13 +1323,13 @@ class House extends Home {
     <?php
     }
 
-    public function edit_delete_house($user_id,$userhouse_post,$house_id){
+    public function edit_delete_car($user_id,$userhouse_post,$car_id){
         
         if(isset($_SESSION['key']) && $user_id == $userhouse_post){ 
         // if($user_id == $userhouse_post){ 
             $mysqli= $this->database;
-            $query= $mysqli->query("SELECT * FROM house WHERE house_id = $house_id and user_id3 = $userhouse_post");
-            $house= $query->fetch_array();
+            $query= $mysqli->query("SELECT * FROM car Where car_id = $car_id and user_id3 = $userhouse_post");
+            $car= $query->fetch_array();
             ?>
 
             <ul class="list-inline ml-2  float-right" style="list-style-type: none;">  
@@ -1356,7 +1340,7 @@ class House extends Home {
                                 <a href="javascript:void(0)" class="more"><i class="fa fa-ellipsis-h" aria-hidden="true"></i></a>
                                 <ul style="list-style-type: none; margin:0px; margin:0px;width:250px;text-align:center;" >
                                     <li style="list-style-type: none; margin:0px;"> 
-                                    <label class="deleteHouse"  data-house="<?php echo $house["house_id"];?>"  data-user="<?php echo $house["user_id3"];?>">Delete </label>
+                                    <label class="deleteHouse"  data-car="<?php echo $car["car_id"];?>"  data-user="<?php echo $car["user_id3"];?>">Delete </label>
                                     </li>
 
                                     <li style="list-style-type: none; margin:0px;"> 
@@ -1365,8 +1349,8 @@ class House extends Home {
                                         <div class="col">
                                                 Banner
                                                 <div class="input-group">
-                                                      <select class="form-control" name="banner" id="banner<?php echo $house["house_id"];?>">
-                                                        <option value="<?php echo $house['banner']; ?>" selected><?php echo $house['banner']; ?></option>
+                                                      <select class="form-control" name="banner" id="banner<?php echo $car["car_id"];?>">
+                                                        <option value="<?php echo $car['banner']; ?>" selected><?php echo $car['banner']; ?></option>
                                                         <option value="new">New</option>
                                                         <option value="new_arrival">New arrival</option>
                                                         <option value="great_deal">Great deal</option>
@@ -1387,8 +1371,8 @@ class House extends Home {
                                         <div class="col">
                                                 Sale
                                                 <div class="input-group">
-                                                      <select class="form-control" name="available" id="available<?php echo $house["house_id"];?>">
-                                                      <?php if ($house['buy'] == 'sold') { ?>
+                                                      <select class="form-control" name="available" id="available<?php echo $car["car_id"];?>">
+                                                      <?php if ($car['buy'] == 'sold') { ?>
                                                         <option value="sold" selected>sold</option>
                                                         <option value="rent">rent</option>
                                                         <option value="sale">sale</option>
@@ -1406,7 +1390,7 @@ class House extends Home {
                                         <div class="col">
                                             discount %
                                             <div class="input-group">
-                                                <input  type="number" class="form-control form-control-sm" name="discount_change" id="discount_change<?php echo $house["house_id"];?>" value="<?php echo $house["discount"];?>">
+                                                <input  type="number" class="form-control form-control-sm" name="discount_change" id="discount_change<?php echo $car["car_id"];?>" value="<?php echo $car["discount"];?>">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text" style="padding: 0px 10px;" aria-label="Username" aria-describedby="basic-addon1" >%</span>
                                                 </div>
@@ -1422,7 +1406,7 @@ class House extends Home {
                                         <div class="col">
                                             discount price
                                             <div class="input-group">
-                                                <input  type="number" class="form-control form-control-sm" name="discount_price" id="discount_price<?php echo $house["house_id"];?>" value="<?php echo $house["price_discount"];?>">
+                                                <input  type="number" class="form-control form-control-sm" name="discount_price" id="discount_price<?php echo $car["car_id"];?>" value="<?php echo $car["price_discount"];?>">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text" style="padding: 0px 10px;" aria-label="Username" aria-describedby="basic-addon1">Frw</span>
                                                 </div>
@@ -1433,7 +1417,7 @@ class House extends Home {
                                             <div class="col">
                                                 </div>
                                             <div class="input-group">
-                                                <input  type="number" class="form-control form-control-sm" name="price" id="price<?php echo $house["house_id"];?>" value="<?php echo $house["price"];?>">
+                                                <input  type="number" class="form-control form-control-sm" name="price" id="price<?php echo $car["car_id"];?>" value="<?php echo $car["price"];?>">
                                                 <div class="input-group-append">
                                                     <span class="input-group-text" style="padding: 0px 10px;"
                                                         aria-label="Username" aria-describedby="basic-addon1" >Frw</span>
@@ -1445,7 +1429,7 @@ class House extends Home {
                                     </li>
 
                                     <li style="list-style-type: none;"> 
-                                    <label for="discount" class="update-house-btn" data-house="<?php echo $house["house_id"];?>" data-user="<?php echo $house["user_id3"];?>">submit</label>
+                                    <label for="discount" class="update-house-btn" data-car="<?php echo $car["car_id"];?>" data-user="<?php echo $car["user_id3"];?>">submit</label>
                                     </li>
                                 </ul>
                             </li>
@@ -1459,7 +1443,7 @@ class House extends Home {
       public function top_properties_carousel()
     {
         $mysqli= $this->database;
-        $query= $mysqli->query("SELECT * FROM house H
+        $query= $mysqli->query("SELECT * FROM car H
             Left JOIN provinces P ON H. province = P. provincecode
             Left JOIN districts M ON H. districts = M. districtcode
             Left JOIN sectors T ON H. sector = T. sectorcode
@@ -1468,69 +1452,69 @@ class House extends Home {
             Left JOIN users U ON H. user_id3 = U. user_id 
         WHERE H. approval = 'on' ORDER BY rand() Desc Limit 0,2");
 
-        while ($house= $query->fetch_array()) { ?>
+        while ($car= $query->fetch_array()) { ?>
 
         <div class="single-top-properties" >
             <div class="row">
                 <div class="col-lg-6">
                     <div class="stp-pic">
-                <?php    $file = $house['photo']."=".$house['other_photo'];
+                <?php    $file = $car['photo']."=".$car['other_photo'];
                          $expode = explode("=",$file);  ?>
-                        <img id="house-readmore" data-house="<?php echo $house['house_id']; ?>" src="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>" >
+                        <img id="car-readmore" data-car="<?php echo $car['car_id']; ?>" src="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>" >
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="stp-text">
-                        <div class="s-text" <?php  echo (substr($house['categories_house'],-4) == 'sale')? 'style="background: #da3141;"':'' ;?> > <?php 
-                            $subect = $house['categories_house'];
+                        <div class="s-text" <?php  echo (substr($car['categories_car'],-4) == 'sale')? 'style="background: #da3141;"':'' ;?> > <?php 
+                            $subect = $car['categories_car'];
                             $replace = " ";
                             $searching = "_";
                             echo str_replace($searching,$replace, $subect);
                             ?>
                         </div>
-                        <span class="h6 text-success text-uppercase ml-2"><?php echo $house['equipment']; ?></span>
+                        <span class="h6 text-success text-uppercase ml-2"><?php echo $car['car_marque']; ?></span>
 
-                        <!-- <span class="s-text text-uppercase ml-2"> For < ?php echo $house['buy']; ?></span> -->
-                        <h2><a href="javascript:void(0)" id="house-readmore" data-house="<?php echo $house['house_id']; ?>" ><?php echo $house['name_of_house']; ?></a></h2>
+                        <!-- <span class="s-text text-uppercase ml-2"> For < ?php echo $car['buy']; ?></span> -->
+                        <h2><a href="javascript:void(0)" id="car-readmore" data-car="<?php echo $car['car_id']; ?>" ><?php echo $car['name_of_car']; ?></a></h2>
                         
                         <div class="room-price"> 
                             <span>From: </span>
-                            <h4><?php echo $this->nice_number(number_format($house['price'])); ?> Frw
-                                     <?php  echo (substr($house['categories_house'],-4) == 'sale')? '':'/month';?>
+                            <h4><?php echo $this->nice_number(number_format($car['price'])); ?> Frw
+                                     <?php  echo (substr($car['categories_car'],-4) == 'sale')? '':'/month';?>
                             </h4>
-                            <?php if($house['price_discount'] != 0){ ?>
+                            <?php if($car['price_discount'] != 0){ ?>
                             <span class="text-danger price-change ml-2" style="text-decoration: line-through;">
-                            <?php echo number_format($house['price_discount']); ?> Frw </span> <?php } ?>
+                            <?php echo number_format($car['price_discount']); ?> Frw </span> <?php } ?>
                         </div>
 
                         <div class="properties-location"><i class="icon_pin"></i> 
-                            <a href="javascript:void(0)" id="house-readmore" data-house="<?php echo $house['house_id']; ?>" >
-                            <!-- < ?php echo $house['provincename']; ?> /  -->
-                            <?php echo $house['namedistrict']; ?> District/ 
-                            <?php echo $house['namesector']; ?> Sector
-                            <!-- < ?php echo $house['nameCell']; ?> Cell  -->
+                            <a href="javascript:void(0)" id="car-readmore" data-car="<?php echo $car['car_id']; ?>" >
+                            <!-- < ?php echo $car['provincename']; ?> /  -->
+                            <?php echo $car['namedistrict']; ?> District/ 
+                            <?php echo $car['namesector']; ?> Sector
+                            <!-- < ?php echo $car['nameCell']; ?> Cell  -->
                             </a>
                         </div>
                         <p> 
                         <?php 
-                            if (strlen($house['text']) > 200) {
-                                echo $house['text'] = substr($house['text'],0,200).'..';
+                            if (strlen($car['text']) > 200) {
+                                echo $car['text'] = substr($car['text'],0,200).'..';
                             }else{
-                                echo $house['text'];
+                                echo $car['text'];
                             } ?>
                         </p>
                         <ul class="room-features">
-                            <li>
+                            <!-- <li>
                                 <i class="fa fa-bed"></i>
-                                <p><?php echo $house['bedroom']; ?>  Bed Room</p>
-                            </li>
-                            <li>
+                                <p>< ?php echo $car['bedroom']; ?>  Bed Room</p>
+                            </li> -->
+                            <!-- <li>
                                 <i class="fa fa-bath"></i>
-                                <p><?php echo $house['bathroom']; ?> Baths Room</p>
-                            </li>
+                                <p>< ?php echo $car['bathroom']; ?> Baths Room</p>
+                            </li> -->
                             <li>
                                 <i class="fa fa-car"></i>
-                                <p><?php echo $house['car_in_garage']; ?> Garage</p>
+                                <p>Garage</p>
                             </li>
                         </ul>
                     </div>
@@ -1541,16 +1525,16 @@ class House extends Home {
 <?php   } 
 }
 
-      public function houseReadmore($house_id)
+      public function houseReadmore($car_id)
     {
         $mysqli= $this->database;
-        $query= $mysqli->query("SELECT * FROM users U Left JOIN house H ON H. user_id3 = u. user_id 
+        $query= $mysqli->query("SELECT * FROM users U Left JOIN Car H ON H. user_id3 = u. user_id 
             Left JOIN provinces P ON H. province = P. provincecode
             Left JOIN districts M ON H. districts = M. districtcode
             Left JOIN sectors T ON H. sector = T. sectorcode
             Left JOIN cells C ON H. cell = C. codecell
             Left JOIN vilages V ON H. village = V. CodeVillage 
-        WHERE H. house_id = '$house_id' ");
+        WHERE H. car_id = '$car_id' ");
         $row= $query->fetch_array();
         return $row;
     }
@@ -1599,16 +1583,16 @@ class House extends Home {
 
     } 
     
-    public function house_getPopupTweet($user_id,$house_id,$house_user_id)
+    public function house_getPopupTweet($user_id,$car_id,$house_user_id)
     {
         $mysqli= $this->database;
-        $result= $mysqli->query("SELECT * FROM users U Left JOIN house H ON H. user_id3 = u. user_id 
+        $result= $mysqli->query("SELECT * FROM users U Left JOIN Car H ON H. user_id3 = u. user_id 
         Left JOIN provinces P ON H. province = P. provincecode
             Left JOIN districts M ON H. districts = M. districtcode
             Left JOIN sectors T ON H. sector = T. sectorcode
             Left JOIN cells C ON H. cell = C. codecell
             Left JOIN vilages V ON H. village = V. CodeVillage 
-         WHERE H. house_id = $house_id AND H. user_id3 = $house_user_id ");
+         WHERE H. car_id = $car_id AND H. user_id3 = $house_user_id ");
         // var_dump('ERROR: Could not able to execute'. $query.mysqli_error($mysqli));
         while ($row= $result->fetch_array()) {
             # code...
@@ -1617,15 +1601,15 @@ class House extends Home {
     }
 
 
-    public function deleteHouse($house_id)
+    public function deleteHouse($car_id)
     {
         $mysqli= $this->database;
-        $query="DELETE H,A,W FROM house H 
-                        LEFT JOIN agent_message A ON A. house_id_msg = H. house_id 
-                        LEFT JOIN house_watchlist W ON W. house_id_list = H. house_id 
-                        WHERE H. house_id = '{$house_id}' ";
+        $query="DELETE H,A,W FROM Car H 
+                        LEFT JOIN agent_message A ON A. car_id_msg = H. car_id 
+                        LEFT JOIN car_watchlist W ON W. car_id_list = H. car_id 
+                        WHERE H. car_id = '{$car_id}' ";
 
-        $query1="SELECT * FROM house WHERE house_id = $house_id ";
+        $query1="SELECT * FROM car Where car_id = $car_id ";
 
         $result= $mysqli->query($query1);
         $rows= $result->fetch_assoc();
@@ -1640,15 +1624,15 @@ class House extends Home {
             $allower_ext = array('jpeg', 'jpg', 'png', 'gif', 'bmp', 'pdf' , 'doc' , 'ppt'); // valid extensions
             if (array_diff($fileActualExt,$allower_ext) == false) {
                 $expode = explode("=",$photo);
-                $uploadDir = DOCUMENT_ROOT.'/uploads/house/';
+                $uploadDir = DOCUMENT_ROOT.'/uploads/car/';
                 for ($i=0; $i < count($expode); ++$i) { 
                       unlink($uploadDir.$expode[$i]);
                 }
             }else if (array_diff($fileActualExt,$allower_ext)[0] == 'mp4') {
-                $uploadDir = DOCUMENT_ROOT.'/uploads/house/';
+                $uploadDir = DOCUMENT_ROOT.'/uploads/car/';
                       unlink($uploadDir.$photo);
             }else if (array_diff($fileActualExt,$allower_ext)[0] == 'mp3') {
-                $uploadDir = DOCUMENT_ROOT.'/uploads/house/';
+                $uploadDir = DOCUMENT_ROOT.'/uploads/car/';
                       unlink($uploadDir.$photo);
             }
         }
@@ -1672,10 +1656,10 @@ class House extends Home {
         }
     }
 
-    public function update_house($banner,$available,$discount_change,$discount_price,$price,$house_id)
+    public function update_house($banner,$available,$discount_change,$discount_price,$price,$car_id)
     {
         $mysqli= $this->database;
-        $query= "UPDATE house SET banner= '$banner', buy = '$available', discount = $discount_change ,price_discount = $discount_price, price = $price WHERE house_id= $house_id ";
+        $query= "UPDATE Car SET banner= '$banner', buy = '$available', discount = $discount_change ,price_discount = $discount_price, price = $price WHERE car_id= $car_id ";
         $mysqli->query($query);
 
         if($query){
@@ -1697,62 +1681,30 @@ class House extends Home {
     public function Property_City_search($user_id){ 
 
         $mysqli= $this->database;
-        // $query= $mysqli->query("SELECT categories_house, province, districts, sector ,
+        // $query= $mysqli->query("SELECT categories_car, province, districts, sector ,
         //         COUNT(*) as `count`  FROM `house` GROUP BY sector");
 
-        $query0= $mysqli->query("SELECT H. categories_house,
-        H. province,
-        H. districts,
-        H. sector ,
-        T. namesector, COUNT(*) as `count` FROM `house`H
-		Left JOIN provinces P ON H. province = P. provincecode
-		Left JOIN districts M ON H. districts = M. districtcode
-        Left JOIN sectors T ON H. sector = T. sectorcode 
-        WHERE H. sector IN (10207,10208,10210,10209,10204,10213,10304,10305,10304)
-        GROUP BY H. sector HAVING COUNT(DISTINCT H. sector)=1");
+        $query0= $mysqli->query("SELECT categories_car,car_marque , COUNT(*) as `count` FROM `car`
+        WHERE car_marque != '' and  car_marque IN ('Toyota','Mercedes','Honda','Volkswagen','Nissan','Renault','Land Rover','Hyundai','BMW')
+        GROUP BY car_marque HAVING COUNT(DISTINCT car_marque)=1");
         //  Kacyiru,Kimihurura,Kagugu,Kibagabaga,Gisozi,Nyarutarama,Kimironko,Kicukiro
         //  var_dump($query0);
         //  $row0= $query0->fetch_assoc();
         //  var_dump($row0);
 
-        $query= $mysqli->query("SELECT H. categories_house,
-        H. province,
-        H. districts,
-        H. sector ,
-        T. namesector, COUNT(*) as `count`  FROM `house`H
-		Left JOIN provinces P ON H. province = P. provincecode
-		Left JOIN districts M ON H. districts = M. districtcode
-        Left JOIN sectors T ON H. sector = T. sectorcode GROUP BY H. sector");
+        $query= $mysqli->query("SELECT H. categories_car,
+        H. car_marque , COUNT(*) as `count` FROM `car`H WHERE H. car_marque != ''
+        GROUP BY H. car_marque");
         
         // var_dump($query->fetch_assoc());
 
         $i= 0;$x= 0;$Districts0='';$Districts01='';$Districts='';$Districts1=''; ?>
          <div class="card card-primary mb-3 ">
                 <div class="card-header">
-                    Property Location
+                    Vehicle Location
                 </div><!-- /.card-header -->
                 <div class="card-body message-color" style="padding-top: 2px;padding-bottom: 2px;clear:left">
-                <!-- <ul style="list-style-type: none;float: left;width: 50%;">
-                    <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector('House_For_sale',1,102,10207,1,< ?php echo $user_id; ?>)" >Kacyiru
-                    <span class="badge badge-primary">< ?php echo $this->housecountProperty_City_search(1,102,10207);?></span></a></li>
-                    <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector('House_For_sale',1,102,10208,1,< ?php echo $user_id; ?>)" >Kimihurura
-                    <span class="badge badge-primary">< ?php echo $this->housecountProperty_City_search(1,102,10208);?></span></a></li>
-                    <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector('House_For_sale',1,102,10210,1,< ?php echo $user_id; ?>)" >Kagugu
-                    <span class="badge badge-primary">< ?php echo $this->housecountProperty_City_search(1,102,10210);?></span></a></li>
-                    <li><i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector('House_For_sale',1,102,10209,1,< ?php echo $user_id; ?>)" >Kibagabaga
-                    <span class="badge badge-primary">< ?php echo $this->housecountProperty_City_search(1,102,10209);?></span></a></li>
-                </ul>
-                <ul style="list-style-type: none;">
-                    <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector('House_For_sale',1,102,10204,1,< ?php echo $user_id; ?>)" >Gisozi
-                    <span class="badge badge-primary">< ?php echo $this->housecountProperty_City_search(1,102,10204);?></span></a></li>
-                    <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector('House_For_sale',1,102,10213,1,< ?php echo $user_id; ?>)" >Nyarutarama
-                    <span class="badge badge-primary">< ?php echo $this->housecountProperty_City_search(1,102,10213);?></span></a></li>
-                    <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector('House_For_sale',1,102,10209,1,< ?php echo $user_id; ?>)" >Kimironko
-                    <span class="badge badge-primary">< ?php echo $this->housecountProperty_City_search(1,102,10209);?></span></a></li>
-                    <li><i class="fa fa-caret-right"></i> <a href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector('House_For_sale',1,103,10304,1,< ?php echo $user_id; ?>)" >Kicukiro
-                    <span class="badge badge-primary">< ?php echo $this->housecountProperty_City_search(1,103,10304);?></span></a></li>
-                </ul>    -->
-                <ul style="list-style-type: none;width: 50%;"> 
+                  <ul style="list-style-type: none;width: 50%;"> 
                 <!-- <ul style="list-style-type: none;float: left;width: 50%;">  -->
     <?php
 
@@ -1763,7 +1715,7 @@ class House extends Home {
         $Districts0 .= '
 
             <li>
-            <i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector(\''.$row0['categories_house'].'\','.$row0['province'].','.$row0['districts'].','.$row0['sector'].',1,'.$user_id.')" >'.$row0['namesector'].'
+            <i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector(\''.$row0['categories_car'].'\',\''.$row0['car_marque'].'\',1,'.$user_id.')" >'.$row0['car_marque'].'
             <span class="badge badge-primary">'.$row0['count'].'</span></a>
             </li>
             ';
@@ -1772,7 +1724,7 @@ class House extends Home {
             $Districts01 .= '
 
             <li>
-            <i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector(\''.$row0['categories_house'].'\','.$row0['province'].','.$row0['districts'].','.$row0['sector'].',1,'.$user_id.')" >'.$row0['namesector'].'
+            <i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector(\''.$row0['categories_car'].'\',\''.$row0['car_marque'].'\',1,'.$user_id.')" >'.$row0['car_marque'].'
             <span class="badge badge-primary">'.$row0['count'].'</span></a>
             </li>
             ';
@@ -1791,7 +1743,7 @@ class House extends Home {
         $Districts .= '
 
             <li>
-            <i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector(\''.$row['categories_house'].'\','.$row['province'].','.$row['districts'].','.$row['sector'].',1,'.$user_id.')" >'.$row['namesector'].'
+            <i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector(\''.$row['categories_car'].'\',\''.$row['car_marque'].'\',1,'.$user_id.')" >'.$row['car_marque'].'
             <span class="badge badge-primary">'.$row['count'].'</span></a>
             </li>
             ';
@@ -1800,7 +1752,7 @@ class House extends Home {
             $Districts1 .= '
 
             <li>
-            <i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector(\''.$row['categories_house'].'\','.$row['province'].','.$row['districts'].','.$row['sector'].',1,'.$user_id.')" >'.$row['namesector'].'
+            <i class="fa fa-caret-right"></i> <a  href="javascript:void(0)" onclick="houseCategoriesFooter_SeachSector(\''.$row['categories_car'].'\',\''.$row['car_marque'].'\',1,'.$user_id.')" >'.$row['car_marque'].'
             <span class="badge badge-primary">'.$row['count'].'</span></a>
             </li>
             ';
@@ -1894,7 +1846,7 @@ class House extends Home {
                 $increment= 1;
                 $mysqli = $this->database;
                 $sql=  $mysqli->query("SELECT * FROM agent_message  A 
-                LEFT JOIN house H ON A. house_id_msg = H. house_id ORDER BY datetime DESC");
+                LEFT JOIN car H ON A. car_id_msg = H. car_id ORDER BY datetime DESC");
                 if ($sql->num_rows > 0) {
 
                     while ($row = $sql->fetch_array()) {
@@ -1910,7 +1862,7 @@ class House extends Home {
                                         $file = $row['photo'];
                                         $expode = explode("=",$file);  ?>
                                         <img class="img-avatar" width="80px" 
-                                            src="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>" alt="">
+                                            src="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>" alt="">
                                     </div>
                                 </td>
                                 <td><?php echo $row['name_client']; ?></td>
@@ -1959,7 +1911,7 @@ class House extends Home {
                 
                 $increment= 1;
                 $mysqli = $this->database;
-                $sql=  $mysqli->query("SELECT * FROM business_request_home ORDER BY datetime DESC");
+                $sql=  $mysqli->query("SELECT * FROM business_request_car ORDER BY datetime DESC");
                
                 if ($sql->num_rows > 0) {
 
@@ -1976,12 +1928,12 @@ class House extends Home {
                                     <div> <?php echo $row['phone']; ?></div>
                                 </td>
                                 <td>
-                                    <div> <?php echo $row['property_type']; ?></div>
-                                    <?php echo $row['request_type']; ?> |
-                                    <div> <?php echo $row['equipment']; ?></div>
+                                    <div> <?php echo $row['request_type']; ?></div>
+                                    <?php echo $row['category_type']; ?> |
+                                    <div> <?php echo $row['car_marque']; ?></div>
                                 </td>
                                 <td><div><?php echo $this->timeAgo($row['datetime']); ?></div>
-                                    <input type="button" onclick="business_msg(<?php echo $row['business_request_id'];?>, 'business_request_home')" value="View" class="btn">
+                                    <input type="button" onclick="business_msg(<?php echo $row['business_request_id'];?>, 'business_request_car')" value="View" class="btn">
                                     <input type="button" onclick="deleteRowHouse(<?php echo $row['business_request_id'];?>,'business_request_delete')" value="Delete" class="btn btn-danger">
                                 </td>
                             </tr>
@@ -2054,9 +2006,9 @@ class House extends Home {
     
  <?php   }
 
-    public function profile_agent_house($categories_house,$pages,$user_id){ ?>
+    public function profile_agent_house($categories_car,$pages,$user_id){ ?>
 
-<?php switch ($categories_house) {
+<?php switch ($categories_car) {
                     case 'House_For_sale':
                         # code... ?>
 
@@ -2066,7 +2018,7 @@ class House extends Home {
                 <div class="property_tag">
                         For Sale
                 </div>
-                <img src="<?php echo BASE_URL; ?>uploads/house/2020_38prop.jpg" alt="">
+                <img src="<?php echo BASE_URL; ?>uploads/car/2020_38prop.jpg" alt="">
             </div>
             <div class="property_content">
                 <div class="main_pro">
@@ -2139,10 +2091,10 @@ class House extends Home {
                         <?php 
                                 $increment= 1;
                                 $mysqli= $this->database;
-                                $result= $mysqli->query("SELECT * FROM house WHERE categories_house= '$variable' ");
+                                $result= $mysqli->query("SELECT * FROM car Where categories_car= '$variable' ");
                             if ($result->num_rows > 0) {
                                 while($row= $result->fetch_array()){ ?>
-                            <tr id="house_n<?php echo $row['house_id']; ?>">
+                            <tr id="house_n<?php echo $row['car_id']; ?>">
                                 <td><?php echo  $increment++ ; ?></td>
                                 <td class="text-center">
                                     <div class="avatar">
@@ -2150,7 +2102,7 @@ class House extends Home {
                                         $file = $row['photo'];
                                         $expode = explode("=",$file);  ?>
                                         <img class="img-avatar" width="80px" 
-                                            src="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>" alt="">
+                                            src="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>" alt="">
                                     </div>
                                 </td>
                                 <td>
@@ -2163,20 +2115,20 @@ class House extends Home {
                                         </div> 
                                     <?php } ?>
                                     <?php 
-                                        $subect = $row['categories_house'];
+                                        $subect = $row['categories_car'];
                                         $replace = " ";
                                         $searching = "_";
                                         echo str_replace($searching,$replace, $subect);
                                     ?>
-                                    <div class="text-danger price-change"><?php echo $row['equipment']; ?></div>
-                                   <div>Approval: <span id="approvalHouse<?php echo $row["house_id"] ;?>"><?php echo $row["approval"];?></span></div> 
+                                    <div class="text-danger price-change"><?php echo $row['car_marque']; ?></div>
+                                   <div>Approval: <span id="approvalHouse<?php echo $row["car_id"] ;?>"><?php echo $row["approval"];?></span></div> 
                                 </td>
                                 <td>
-                                    <input type="button" onclick="viewOReditHouses(<?php echo $row['house_id'];?>, 'EditHouseAdmin')" value="Edit" class="btn btn-primary">
-                                    <input type="button" id="house-readmore" data-house="<?php echo $row['house_id']; ?>" value="View" class="btn">
-                                    <input type="button" onclick="deleteRow(<?php echo $row['house_id'];?>,'deleteRowHouse')" value="Delete" class="btn btn-danger">
-                                    <input type="button" onclick="approvedHouses(<?php echo $row['house_id'];?>, 'off')" value="off" class="btn btn-warning btn-sm ">
-                                    <input type="button" onclick="approvedHouses(<?php echo $row['house_id'];?>, 'on')" value="on" class="btn btn-success btn-sm">
+                                    <input type="button" onclick="viewOReditHouses(<?php echo $row['car_id'];?>, 'EditHouseAdmin')" value="Edit" class="btn btn-primary">
+                                    <input type="button" id="car-readmore" data-car="<?php echo $row['car_id']; ?>" value="View" class="btn">
+                                    <input type="button" onclick="deleteRow(<?php echo $row['car_id'];?>,'deleteRowHouse')" value="Delete" class="btn btn-danger">
+                                    <input type="button" onclick="approvedHouses(<?php echo $row['car_id'];?>, 'off')" value="off" class="btn btn-warning btn-sm ">
+                                    <input type="button" onclick="approvedHouses(<?php echo $row['car_id'];?>, 'on')" value="on" class="btn btn-success btn-sm">
                                 </td>
                             </tr>
                     <?php 
@@ -2185,7 +2137,14 @@ class House extends Home {
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td>No record</td>
+                                <td> 
+                                    <div class="col-md-12 col-lg-12"><div class="alert alert-danger alert-dismissible fade show text-center">
+                                        <button class="close" data-dismiss="alert" type="button">
+                                            <span>&times;</span>
+                                        </button>
+                                        <strong>No Record</strong>
+                                    </div>
+                                </td>
                                 <td></td>
                             </tr>
                         <?php    }
@@ -2217,10 +2176,10 @@ class House extends Home {
                         <?php 
                                 $increment= 1;
                                 $mysqli= $this->database;
-                                $result= $mysqli->query("SELECT * FROM house WHERE categories_house= '$variable' AND user_id3=$id ");
+                                $result= $mysqli->query("SELECT * FROM car Where categories_car= '$variable' AND user_id3=$id ");
                             if ($result->num_rows > 0) {
                                 while($row= $result->fetch_array()){ ?>
-                           <tr id="house_n<?php echo $row['house_id']; ?>">
+                           <tr id="house_n<?php echo $row['car_id']; ?>">
                                 <td><?php echo  $increment++ ; ?></td>
                                 <td class="text-center">
                                     <div class="avatar">
@@ -2228,7 +2187,7 @@ class House extends Home {
                                         $file = $row['photo'];
                                         $expode = explode("=",$file);  ?>
                                         <img class="img-avatar" width="80px" 
-                                            src="<?php echo BASE_URL.'uploads/house/'.$expode[0]; ?>" alt="">
+                                            src="<?php echo BASE_URL.'uploads/car/'.$expode[0]; ?>" alt="">
                                     </div>
                                 </td>
                                 <td>
@@ -2241,22 +2200,22 @@ class House extends Home {
                                         </div> 
                                     <?php } ?>
                                     <?php 
-                                        $subect = $row['categories_house'];
+                                        $subect = $row['categories_car'];
                                         $replace = " ";
                                         $searching = "_";
                                         echo str_replace($searching,$replace, $subect);
                                     ?>
-                                    <div class="text-danger price-change"><?php echo $row['equipment']; ?></div>
+                                    <div class="text-danger price-change"><?php echo $row['car_marque']; ?></div>
                                 </td>
                                 <td>
-                                    <!-- <input type="button" onclick="viewOReditHouses(< ?php echo $row['house_id'];?>, 'EditHouseAdmin')" value="Edit" class="btn btn-primary">
-                                    <input type="button" id="house-readmore" data-house="< ?php echo $row['house_id']; ?>" value="View" class="btn">
-                                    <input type="button" onclick="deleteRow(< ?php echo $row['house_id'];?>,'deleteRowHouse')" value="Delete" class="btn btn-danger">
+                                    <!-- <input type="button" onclick="viewOReditHouses(< ?php echo $row['car_id'];?>, 'EditHouseAdmin')" value="Edit" class="btn btn-primary">
+                                    <input type="button" id="car-readmore" data-car="< ?php echo $row['car_id']; ?>" value="View" class="btn">
+                                    <input type="button" onclick="deleteRow(< ?php echo $row['car_id'];?>,'deleteRowHouse')" value="Delete" class="btn btn-danger">
                                      -->
                                     <div class="btn-group btn-group-sm">
-                                        <a href="javascript:void(0)" onclick="viewOReditHouses(<?php echo $row['house_id'];?>, 'EditHouseAdmin')"   class="btn btn-primary"><i class="fas fa-edit"></i></a>
-                                        <a href="javascript:void(0)" id="house-readmore" data-house="<?php echo $row['house_id']; ?>" class="btn btn-info"><i class="fas fa-eye"></i></a>
-                                        <a href="javascript:void(0)" onclick="deleteRow(<?php echo $row['house_id'];?>,'deleteRowHouse')" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                                        <a href="javascript:void(0)" onclick="viewOReditHouses(<?php echo $row['car_id'];?>, 'EditHouseAdmin')"   class="btn btn-primary"><i class="fas fa-edit"></i></a>
+                                        <a href="javascript:void(0)" id="car-readmore" data-car="<?php echo $row['car_id']; ?>" class="btn btn-info"><i class="fas fa-eye"></i></a>
+                                        <a href="javascript:void(0)" onclick="deleteRow(<?php echo $row['car_id'];?>,'deleteRowHouse')" class="btn btn-danger"><i class="fas fa-trash"></i></a>
                                     </div>
                                     <!-- <div class="btn-group btn-group-sm">
                                         <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
@@ -2270,7 +2229,14 @@ class House extends Home {
                             <tr>
                                 <td></td>
                                 <td></td>
-                                <td>No record</td>
+                                <td>
+                                    <div class="col-md-12 col-lg-12"><div class="alert alert-danger alert-dismissible fade show text-center">
+                                        <button class="close" data-dismiss="alert" type="button">
+                                            <span>&times;</span>
+                                        </button>
+                                        <strong>No Record</strong>
+                                    </div>
+                                </td>
                                 <td></td>
                             </tr>
                         <?php    }
@@ -2295,7 +2261,7 @@ class House extends Home {
             <!-- Profile Image -->
             <div class="card bg-light sa-pic">
                 <div class="card-header text-muted border-bottom-0">
-                  Real Estate Agent
+                 Dealer
                 </div>
                 <div class="card-body">
                   <div class="row">
@@ -2378,7 +2344,7 @@ class House extends Home {
                     <!-- Profile Image -->
                     <div class="card bg-light">
                         <div class="card-header text-muted border-bottom-0">
-                        Real Estate Agent
+                        Dealer
                         </div>
                         <div class="card-body">
                         <div class="row">
@@ -2451,19 +2417,19 @@ class House extends Home {
 
             <div class="card card-primary mb-3 ">
                         <div class="card-header">
-                        PROPERTY REQUEST
+                        VEHICLE REQUEST
                         </div>
                         <!-- /.card-header -->
                 <div class="card-body message-color" style="padding-top: 2px;padding-bottom: 2px;">
                     <div class="row">
 
             <?php $mysqli= $this->database;
-                  $result =$mysqli->query("SELECT * FROM business_request_home ORDER BY rand(), datetime Desc Limit 0,9");
+                  $result =$mysqli->query("SELECT * FROM business_request_car ORDER BY rand(), datetime Desc Limit 0,9");
                 
                     while ($user= $result->fetch_array()) { ?>
                         
                                 <div class="col-12 px-0 border-bottom">
-                                <div class="user-block mb-2 jobHover more"  href="javascript:void()" onclick="business_msg(<?php echo $user['business_request_id'];?>, 'business_request_home')" >
+                                <div class="user-block mb-2 jobHover more"  href="javascript:void()" onclick="business_msg(<?php echo $user['business_request_id'];?>, 'business_request_car')" >
                                     <div class="user-jobImgBorder">
                                             <div class="user-jobImg">
                                                 <img src="<?php echo BASE_URL;?>assets/image/users_profile_cover/empty-profile.png" alt="User Image">
@@ -2473,12 +2439,9 @@ class House extends Home {
                                     <!-- Job Title:  -->
                                         <a style="padding-right:3px;" href="#"><?php echo $user['name_client'];?></a> 
                                     </span>
-                                    <div class="description"><span class="btn-sm btn-success"><?php echo $user['request_type'];?></span> <span class="btn-sm btn-primary"> <?php echo $user['equipment'];?></span></div>
+                                    <div class="description"><span class="btn-sm btn-success"><?php echo $user['request_type'];?></span> <span class="btn-sm btn-primary"> <?php echo $user['car_marque'];?></span></div>
                                     <div class="description"><i class="fa fa-map-marker" aria-hidden="true"></i> <?php echo $user['location'];?></div>
-                                    <div class="description"><?php echo $user['bedroom']." ";?><i class="fa fa-bed" aria-hidden="true"></i>  <?php echo $user['bathroom']." ";?><i class="fa fa-bath" aria-hidden="true"></i>
-                                        | <?php echo number_format($user['price']);?> <?php echo $user['currency'];?>
-                                    </div>
-                                    <div class="description">Publish <?php echo $this->timeAgo($user['datetime']);?></div>
+                                    <div class="description"><?php echo number_format($user['price']);?> <?php echo $user['currency'];?> Publish <?php echo $this->timeAgo($user['datetime']);?></div>
                                 </div>
                                 </div>
                                 <hr>
@@ -2497,7 +2460,7 @@ class House extends Home {
 public function housecountProperty_City_search($province,$district,$sector)
 {
     $db =$this->database;
-    $sql= $db->query("SELECT COUNT(*) FROM house H
+    $sql= $db->query("SELECT COUNT(*) FROM car H
     Left JOIN provinces P ON H. province = P. provincecode
     Left JOIN districts M ON H. districts = M. districtcode
     Left JOIN sectors T ON H. sector = T. sectorcode

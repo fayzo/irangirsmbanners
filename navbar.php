@@ -69,7 +69,8 @@
                     <div class="col-lg-3">
                             <div class="logo">
                                 <a href="<?php echo (isset($_SESSION['key']))? HOME:F_INDEX; ?>"> 
-                                  <img src="<?php echo BASE_URL;?>assets/image/img/partner/irangiro_House.png" alt="">
+                                  <!-- <img src="< ?php echo BASE_URL;?>assets/image/img/partner/irangiro_House.png" alt=""> -->
+                                  <img width="118px" src="<?php echo BASE_URL;?>assets/image/logo/<?php echo $businessDetails['business_logo'] ;?>" alt="">
                                 </a>
                             </div>
                     </div>
@@ -116,7 +117,7 @@
                     <div class="search-form-text">
                         <div class="search-text">
                             <i class="fa fa-search"></i>
-                            Find Your Home
+                            Find Your Car
                         </div>
                         <span class="home-text language-option" >
                                 <img src="<?php echo BASE_URL;?>assets/image/img/rw-flag.jpg" alt="">
@@ -139,9 +140,9 @@
 
                             <div class="nav-float-right">
                                 
-                                <a style="color:white;border: none;" href="#" class="btn btn-sm btn-outline-primary"  id="contacts_us" data-contacts="contacts_us" data-user='<?php echo $user_id ;?>' ><i class="fas fa-edit"></i> Request Property</a>
+                                <a style="color:white;border: none;" href="#" class="btn btn-sm btn-outline-primary"  id="contacts_us" data-contacts="contacts_us" data-user='<?php echo $user_id ;?>' ><i class="fas fa-edit"></i> Request Vehicle</a>
                                 <!-- <a style="color:white;border: none;" href="#" class="btn btn-sm btn-outline-primary" id="property_request_clients" data-house="admin" >Request Property</a> -->
-                                <a style="color:white;border: none;" href="#" class="btn btn-sm btn-outline-primary" id="add_house" data-house="<?php echo $user_id; ?>" ><i class="fas fa-edit"></i> Post Property</a>
+                                <a style="color:white;border: none;" href="#" class="btn btn-sm btn-outline-primary" id="add_house" data-house="<?php echo $user_id; ?>" ><i class="fas fa-edit"></i> Post Vehicle</a>
                                 <?php if (isset($_SESSION['key'])) { ?>
                                     <div class="dropdown user user-menu show">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
